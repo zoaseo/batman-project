@@ -1,0 +1,27 @@
+#loginform {
+    background-color: rgba(1, 1, 1, 0.5);
+    width: 700px;
+    height: 500px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+}
+table {
+    color: #fff;
+    text-align: center;
+    width: 100%;
+}
+.login_left {
+    text-align: right;
+    width: 25%
+}
+.login_right {
+    width: 75%;
+}
+#span_login {
+    margin-right: 10%;
+}
+#span_logout {
+    margin-left: 10%;
+}

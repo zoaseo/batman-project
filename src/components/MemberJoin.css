@@ -1,0 +1,26 @@
+#joinform {
+    background-color: rgba(1, 1, 1, 0.5);
+    width: 700px;
+    height: 600px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+}
+th {
+    padding-bottom: 25px;
+}
+.join_left {
+    text-align: right;
+    width: 25%
+}
+.join_right {
+    width: 75%;
+}
+.btn {
+    border: none;
+    background: none;
+    color: #fff;
+    font-size: 18px;
+    margin: 0 20px;
+}

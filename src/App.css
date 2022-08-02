@@ -1,8 +1,33 @@
 * { padding: 0; margin: 0; box-sizing: border-box; scroll-behavior: smooth;}
 li { list-style: none; }
 a { text-decoration: none; color: inherit;}
-/* .App {
-    width: 100%;
+html, body {
+    height: 100vh;
+    overflow-y: hidden;
+}
+#root {
+    height: 100vh;
+    overflow-y: hidden;
+}
+.App {
+    /* width: 100%;
     max-width: 1600px;
-    margin: 0 auto;
-} */
+    margin: 0 auto; */
+    height: 100%;
+    overflow-x: hidden;
+    overflow-y: hidden;
+}
+.titlelogo {
+    width: 600px;
+    height: 140px;
+    text-align: center;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 13%;
+    color: #fff;
+    background-color: tomato;
+}
+.titlelogo h1 {
+    font-size: 50px;
+}

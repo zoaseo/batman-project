@@ -1,6 +1,6 @@
 import React from 'react';
 
-const SecondPage = () => {
+const DarknightComponent = () => {
     return (
         <div>
             <div id="back">
@@ -9,4 +9,4 @@ const SecondPage = () => {
     );
 };
 
-export default SecondPage;
+export default DarknightComponent;

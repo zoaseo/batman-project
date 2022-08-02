@@ -40,9 +40,9 @@ const Header = () => {
                     <div><h1><Link to="/">BATMAN</Link></h1></div>
                     <div>
                         <ul id="fff">
-                            <li>insert</li>
-                            <li>login</li>
-                            <li>join</li>
+                            <li><Link to="detail">insert</Link></li>
+                            <li><Link to="login">login</Link></li>
+                            <li><Link to="join">join</Link></li>
                         </ul>
                     </div>
                 </div>
@@ -110,7 +110,19 @@ const Header = () => {
 
                     </ul>
                 </div>
-                <div id="header_footer"></div>
+                <div id="header_footer">
+                    <div>
+                        <p>JOIN THE CONVERSATION</p>
+                        <ul id='icon_flex'>
+                            <li><a href="#"><img src='../img/facebook.png' alt=''/></a></li>
+                            <li><a href="#"><img src='../img/instagram.png' alt=''/></a></li>
+                            <li><a href="#"><img src='../img/twitter.png' alt=''/></a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <p>ⓒ 2022 BATMAN ALL RIGHTS RESERVED</p>
+                    </div>
+                </div>
             </div>
         </div>
     );

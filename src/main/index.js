@@ -17,7 +17,7 @@ function Titlefly () {
     go2.style.opacity='0';
     go3.style.opacity='0';
     go2.style.left = '110%';
-    go3.style.top = '-10%';
+    go3.style.top = '-30%';
 }
 function Titlefly2 () {
     const fir_ti = document.querySelector('#choice ul li:nth-child(1)');
@@ -34,7 +34,7 @@ function Titlefly2 () {
     go.style.opacity='0';
     go3.style.opacity='0';
     go.style.left = '-10%';
-    go3.style.top = '-10%';
+    go3.style.top = '-30%';
 }
 function Titlefly3 () {
     const fir_ti = document.querySelector('#choice ul li:nth-child(1)');

@@ -1,6 +1,6 @@
 import React from 'react';
 
-const ThirdPage = () => {
+const DarknightLisesComponent = () => {
     return (
         <div>
             <div id="back">
@@ -9,4 +9,4 @@ const ThirdPage = () => {
     );
 };
 
-export default ThirdPage;
+export default DarknightLisesComponent;

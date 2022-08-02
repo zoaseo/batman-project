@@ -92,7 +92,7 @@ const Header = () => {
                         <li>
                             <ul id='three' className="li_flex">
                                 <li>
-                                    <h2>when</h2>
+                                    <h2>Goods</h2>
                                     <ul id="fir_ul">
                                         <li>1</li>
                                         <li>2</li>
@@ -120,7 +120,7 @@ const Header = () => {
                         </ul>
                     </div>
                     <div>
-                        <p>ⓒ 2022 BATMAN ALL RIGHTS RESERVED</p>
+                        <p id="iii">ⓒ 2022 BATMAN ALL RIGHTS RESERVED</p>
                     </div>
                 </div>
             </div>

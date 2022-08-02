@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Benne&family=BhuTuka+Expanded+One&family=Mouse+Memoirs&family=Noto+Sans+KR&display=swap');
 * { padding: 0; margin: 0; box-sizing: border-box; scroll-behavior: smooth;}
 li { list-style: none; }
 a { text-decoration: none; color: inherit;}
@@ -24,10 +25,68 @@ html, body {
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
-    top: 13%;
+    top: 10%;
     color: #fff;
     background-color: tomato;
 }
 .titlelogo h1 {
-    font-size: 50px;
+    font-size: 60px;
+    font-family: 'Mouse Memoirs', sans-serif;
+    letter-spacing: 5px;
+}
+
+/* font-family: 'BhuTuka Expanded One', cursive; 영어
+font-family: 'Mouse Memoirs', sans-serif; 영어
+font-family: 'Noto Sans KR', sans-serif;  한글 */
+
+#whole {
+    /* background-color: tomato; */
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    font-family: 'Noto Sans KR', sans-serif;
+    color: #fff;
+    /* background-color: aqua; */
+    position: relative;
+}
+#whole ul {
+    position: absolute;
+    left: 55%;
+    transform: translateX(-50%);
+    top: 18%;
+    width: 70%;
+    height: 750px;
+    /* background-color: tomato; */
+    display: flex;
+    flex-wrap: wrap;
+}
+#whole ul li {
+    width: 30%;
+    margin: 0 1.5%;
+    /* background-color: aliceblue; */
+    text-align: center;
+}
+#whole ul li img {
+    width: 80%;
+    filter: brightness(70%);
+}
+.AllContent {
+    display: flex;
+}
+#li_right {
+    margin-left: 15px;
+}
+#p_title1 {
+    font-size: 15px;
+}
+#p_title2 {
+    font-size: 22px;
+}
+#p_title3 {
+    font-size: 15px;
+    transition: 0.5s;
+    cursor: pointer;
+}
+#p_title3:hover {
+    transform: scale(1.2);
 }

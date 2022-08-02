@@ -71,7 +71,7 @@ const Mainpage = () => {
                     <span><Link to="/third">click</Link></span>
                     <img src="/img/go.png" alt="go3"/>
                 </button>
-                <ul>
+                <ul id="logologo">
                     <li onClick={Titlefly}>Batman Begins<br/>2005</li>
                     <li onClick={Titlefly2}>The Dark Knight<br/>2008</li>
                     <li onClick={Titlefly3}>The Dark Knight Rises<br/>2012</li>

@@ -1,7 +1,8 @@
 #header {
+    /* font-family: 'BhuTuka Expanded One', cursive;  */
     background-color: black;
     color: #fff;
-    padding: 20px 30px;
+    padding: 20px 50px;
 }
 .inner {
     display: flex;
@@ -9,8 +10,10 @@
     align-items: center;
 }
 .inner h1 {
-    margin-left: 25%;
-    font-size: 40px;
+    font-family: 'Mouse Memoirs', sans-serif;
+    margin-left: 40%;
+    font-size: 45px;
+    letter-spacing: 5px;
 }
 #header #ham {
     width: 50px;
@@ -60,6 +63,7 @@
     transform: rotate(-360deg);
 } */
 #site_map {
+    font-family: 'BhuTuka Expanded One', cursive; 
     background-color: rgba(1, 1, 1, 0.5);
     width: 500px;
     height: 100vh;
@@ -106,6 +110,7 @@ form input {
 }
 #header_ul h2 {
     font-weight: 700;
+    font-size: 45px;
 }
 .li_flex {
     font-size: 30px;
@@ -115,6 +120,9 @@ form input {
     /* background: aqua; */
     overflow: hidden;
     transition: 0.5s;
+}
+#fir_ul {
+    margin-top: 15px;
 }
 #one.ontoggle {
     height: 400px;
@@ -130,9 +138,10 @@ form input {
 
 #fff {
     display: flex;
+    font-family: 'Noto Sans KR', sans-serif;
 }
 #fff li {
-    margin-left: 10px;
+    margin-left: 15px;
 }
 
 
@@ -163,4 +172,10 @@ form input {
 }
 #header_footer a:hover img {
     transform: scale(1.2);
+}
+#header_footer p {
+    font-size: 13px;
+}
+#iii {
+    text-align: right;
 }

@@ -5,6 +5,7 @@
     object-fit: contain;
     position: absolute;
     z-index: -1;
+    filter: brightness(60%);
 }
 #choice {
     width: 100%;
@@ -48,6 +49,7 @@
     width: 200px;
     transition: 3.5s;
     opacity: 0;
+    font-family: 'Noto Sans KR', sans-serif;
 }
 .gostyle img {
     width: 100%;
@@ -71,4 +73,8 @@
 #go3 {
     left: 50%;    
     top: -30%;   
+}
+#logologo {
+    font-family: 'Mouse Memoirs', sans-serif;
+    letter-spacing: 5px;
 }

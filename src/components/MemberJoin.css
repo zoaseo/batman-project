@@ -6,9 +6,11 @@
     left: 50%;
     top: 50%;
     transform: translate(-50%,-50%);
+    font-family: 'Noto Sans KR', sans-serif;
 }
 th {
     padding-bottom: 25px;
+    font-size: 20px;
 }
 .join_left {
     text-align: right;
@@ -17,10 +19,23 @@ th {
 .join_right {
     width: 75%;
 }
+.margin {
+    margin-right: 12%;
+}
+.margin_n {
+    margin-left: 5%;
+    margin-top: 10px;
+}
 .btn {
     border: none;
     background: none;
     color: #fff;
     font-size: 18px;
     margin: 0 20px;
+    margin-bottom: 10px;
+}
+#add_btn {
+    background-color: rgba(255, 255, 255, 0.8);
+    color: #111;
+    margin-left: 5px;
 }

@@ -144,40 +144,40 @@ const MemberJoin = () => {
                         <tr>
                             <td className="join_left">비밀번호</td>
                             <td className="join_right">
-                            <input type="password" id="password" name="password"/>
+                            <input className='margin' type="password" id="password" name="password"/>
                             </td>
                         </tr>
                         <tr>
                             <td className="join_left">비밀번호 확인</td>
                             <td className="join_right">
-                            <input type="password"  id="passwordCk" name="passwordCk"/>
+                            <input className='margin' type="password"  id="passwordCk" name="passwordCk"/>
                             <span id="passInform"></span>
                             </td>
                         </tr>
                         <tr>
                             <td className="join_left">이름</td>
                             <td className="join_right">
-                            <input type="text" name="name"/>
+                            <input className='margin' type="text" name="name"/>
                             </td>
                         </tr>
                         <tr>
                             <td className="join_left">전화번호</td>
                             <td className="join_right">
-                            <input type="text" name="phone"/>
+                            <input className='margin' type="text" name="phone"/>
                             </td>
                         </tr>
                         <tr>
                             <td className="join_left">이메일</td>
                             <td className="join_right">
-                            <input type="text" name="email"/>
+                            <input className='margin' type="text" name="email"/>
                             </td>
                         </tr>
                         <tr>
                             <td className="join_left">주소</td>
                             <td className="join_right">
-                                <input name="add" type="text"/>-
-                                <input name="adddetail" type="text"/>
-                                <button type="button" >우편번호 검색</button>
+                                <input className='margin' name="add" type="text"/>
+                                <input className='margin_n' name="adddetail" type="text"/>
+                                <button id="add_btn" type="button" >우편번호 검색</button>
                                 {/* <div id="popupDom">
                                 {isPopupOpen && (
                                     <PopupDom>

@@ -1,5 +1,4 @@
 import React from 'react';
-import './begins.css';
 import useAsync from '../customHook/useAsync';
 import axios from 'axios';
 // import { Link } from 'react-router-dom';

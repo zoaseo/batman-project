@@ -6,7 +6,8 @@
     left: 50%;
     top: 50%;
     transform: translate(-50%,-50%);
-    font-family: 'Noto Sans KR', sans-serif;
+    /* font-family: 'Noto Sans KR', sans-serif; */
+    font-family: 'Montserrat', sans-serif;
 }
 th {
     padding-bottom: 25px;
@@ -29,7 +30,7 @@ th {
 .btn {
     border: none;
     background: none;
-    color: #fff;
+    color: #ddd;
     font-size: 18px;
     margin: 0 20px;
     margin-bottom: 10px;

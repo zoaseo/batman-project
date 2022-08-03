@@ -6,10 +6,11 @@
     left: 50%;
     top: 50%;
     transform: translate(-50%,-50%);
-    font-family: 'Noto Sans KR', sans-serif;
+    /* font-family: 'Noto Sans KR', sans-serif; */
+    font-family: 'Montserrat', sans-serif;
 }
 table {
-    color: #fff;
+    color: #ddd;
     text-align: center;
     width: 100%;
 }

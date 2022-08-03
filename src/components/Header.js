@@ -6,14 +6,14 @@ const Header = () => {
     function OpenSitemap () {
         const site_map = document.querySelector('#site_map');
         site_map.style.left = '0px';
-        site_map.style.zIndex = '1';
+        site_map.style.zIndex = '2';
         const ham = document.querySelector('#ham');
         ham.style.opacity = '0';
     }
     function CloseSitemap () {
         const site_map = document.querySelector('#site_map');
-        site_map.style.left = '-500px';
-        site_map.style.zIndex = '0';
+        site_map.style.left = '-550px';
+        site_map.style.zIndex = '1';
         const ham = document.querySelector('#ham');
         ham.style.opacity = '1';
     }
@@ -31,6 +31,8 @@ const Header = () => {
     }
     return (
         <div id="header">
+            {/* <div id="back">
+            </div> */}
             <div id="top_header">
                 <div className='inner'>
                     <div id="ham" onClick={OpenSitemap}>
@@ -62,10 +64,10 @@ const Header = () => {
                         <li>
                             <ul id='one' className="li_flex">
                                 <li>
-                                    <h2>who</h2>
+                                    <h2>batman begins</h2>
                                     <ul id="fir_ul">
-                                        <li>1</li>
-                                        <li>2</li>
+                                        <li className='fir_li'><Link to="/first">characters</Link></li>
+                                        <li>goods</li>
                                         <li>3</li>
                                         <li>4</li>
                                         <li>5</li>
@@ -77,10 +79,10 @@ const Header = () => {
                         <li>
                             <ul id='two' className="li_flex">
                                 <li>
-                                    <h2>what</h2>
+                                    <h2>The Dark Knight</h2>
                                     <ul id="fir_ul">
-                                        <li>1</li>
-                                        <li>2</li>
+                                        <li className='fir_li'><Link to="/second">characters</Link></li>
+                                        <li>goods</li>
                                         <li>3</li>
                                         <li>4</li>
                                         <li>5</li>
@@ -90,12 +92,12 @@ const Header = () => {
                             </ul>
                         </li>
                         <li>
-                            <ul id='three' className="li_flex">
+                            <ul id='three' className="li_flex la_li">
                                 <li>
-                                    <h2>Goods</h2>
+                                    <h2>The Dark Knight Rises</h2>
                                     <ul id="fir_ul">
-                                        <li>1</li>
-                                        <li>2</li>
+                                        <li className='fir_li'><Link to="/third">characters</Link></li>
+                                        <li>goods</li>
                                         <li>3</li>
                                         <li>4</li>
                                         <li>5</li>

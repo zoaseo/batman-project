@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Benne&family=BhuTuka+Expanded+One&family=Mouse+Memoirs&family=Noto+Sans+KR&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Benne&family=BhuTuka+Expanded+One&family=Montserrat:wght@300&family=Mouse+Memoirs&family=Noto+Sans+KR&display=swap');
 * { padding: 0; margin: 0; box-sizing: border-box; scroll-behavior: smooth;}
 li { list-style: none; }
 a { text-decoration: none; color: inherit;}
@@ -26,13 +26,14 @@ html, body {
     left: 50%;
     transform: translateX(-50%);
     top: 10%;
-    color: #fff;
-    background-color: tomato;
+    color: #ddd;
+    /* background-color: tomato; */
 }
 .titlelogo h1 {
     font-size: 60px;
     font-family: 'Mouse Memoirs', sans-serif;
-    letter-spacing: 5px;
+    letter-spacing: 10px;
+    font-weight: lighter;
 }
 
 /* font-family: 'BhuTuka Expanded One', cursive; 영어
@@ -44,19 +45,20 @@ font-family: 'Noto Sans KR', sans-serif;  한글 */
     width: 100%;
     height: 100vh;
     position: relative;
-    font-family: 'Noto Sans KR', sans-serif;
-    color: #fff;
+    /* font-family: 'Noto Sans KR', sans-serif; */
+    font-family: 'Montserrat', sans-serif;
+    color: #ddd;
     /* background-color: aqua; */
     position: relative;
 }
 #whole ul {
     position: absolute;
-    left: 55%;
+    left: 50%;
     transform: translateX(-50%);
-    top: 18%;
+    top: 25%;
     width: 70%;
     height: 750px;
-    /* background-color: tomato; */
+    background-color: tomato;
     display: flex;
     flex-wrap: wrap;
 }
@@ -65,28 +67,45 @@ font-family: 'Noto Sans KR', sans-serif;  한글 */
     margin: 0 1.5%;
     /* background-color: aliceblue; */
     text-align: center;
+    position: relative;
+}
+#imgimg {
+    /* background-color: tomato; */
+    width: 110px;
+    height: 120px;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
 }
 #whole ul li img {
-    width: 80%;
-    filter: brightness(70%);
+    width: 100%;
+    filter: brightness(60%);
 }
 .AllContent {
-    display: flex;
+    /* display: flex; */
 }
 #li_right {
     margin-left: 15px;
 }
+.tt {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
 #p_title1 {
-    font-size: 15px;
+    font-size: 12px;
+    top: 50%;
 }
 #p_title2 {
-    font-size: 22px;
+    font-size: 16px;
+    top: 56%;
 }
 #p_title3 {
     font-size: 15px;
+    top: 65%;
     transition: 0.5s;
     cursor: pointer;
 }
 #p_title3:hover {
-    transform: scale(1.2);
+    font-size: 17px;
 }

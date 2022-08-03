@@ -22,6 +22,7 @@ function App() {
         <Route path="/login" element={<MemberLogin/>}/>
         <Route path="/join" element={<MemberJoin/>}/>
         <Route path="/detail" element={<DetailCharacter/>}/>
+        <Route path="/detailview/:id" element={<DetailCharacter/>}/>
       </Routes>
     </div>
   );

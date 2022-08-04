@@ -40,3 +40,22 @@ th {
     color: #111;
     margin-left: 5px;
 }
+#duCk {
+    background-color: rgba(255, 255, 255, 0.5);
+    margin-left: 5px;
+    padding: 3px;
+    color: #3d3d3d;
+    font-size: 15px;
+    cursor: pointer;
+}
+#add_btn {
+    background-color: rgba(255, 255, 255, 0.5);
+    margin-left: 5px;
+    padding: 3px;
+    color: #3d3d3d;
+    font-size: 15px;
+    cursor: pointer;
+}
+#btns button {
+    cursor: pointer;
+}

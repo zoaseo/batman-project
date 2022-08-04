@@ -7,6 +7,9 @@ import DetailCharacter from './components/DetailCharacter';
 import Header from './components/Header';
 import MemberJoin from './components/MemberJoin';
 import MemberLogin from './components/MemberLogin';
+import Goods1Page from './goods1';
+import Goods2Page from './goods2';
+import Goods3Page from './goods3';
 import Mainpage from './main';
 
 
@@ -23,6 +26,9 @@ function App() {
         <Route path="/join" element={<MemberJoin/>}/>
         <Route path="/detail" element={<DetailCharacter/>}/>
         <Route path="/detailview/:id" element={<DetailCharacter/>}/>
+        <Route path="/goods1" element={<Goods1Page/>}/>
+        <Route path="/goods2" element={<Goods2Page/>}/>
+        <Route path="/goods3" element={<Goods3Page/>}/>
       </Routes>
     </div>
   );

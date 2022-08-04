@@ -52,7 +52,7 @@ const DetailCharacter = () => {
                     <div id="div_description">{character.description}</div>
                 </div>
                 <div id="right_detail">
-                    <div id="detail_img"><img src={`../img/1.11.png`} alt="" /></div>
+                    <div id="detail_img"><img src={`../${character.imgsrc2}`} alt="" /></div>
                 </div>
             </div>
         </div>

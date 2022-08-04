@@ -27,3 +27,12 @@ table {
 #span_logout {
     margin-left: 10%;
 }
+#loginth {
+    padding: 0;
+}
+#loginform tr {
+    height: 100px;
+}
+#spans span {
+    cursor: pointer;
+}

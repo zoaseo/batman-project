@@ -1,8 +1,13 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import './Header.css';
 
 const Header = () => {
+    const idid = sessionStorage.getItem('loginId');
+    const Navigate = useNavigate();
+    function goHome() {
+        Navigate('/');
+    }
     function OpenSitemap () {
         const site_map = document.querySelector('#site_map');
         site_map.style.left = '0px';
@@ -29,6 +34,10 @@ const Header = () => {
         const three = document.querySelector('#three');
         three.classList.toggle('ontoggle');
     }
+    const Logout = async () => {
+        sessionStorage.clear();
+        console.log(JSON.stringify(sessionStorage));
+    }
     return (
         <div id="header">
             {/* <div id="back">
@@ -43,8 +52,8 @@ const Header = () => {
                     <div>
                         <ul id="fff">
                             <li><Link to="detail">insert</Link></li>
-                            <li><Link to="login">login</Link></li>
-                            <li><Link to="join">join</Link></li>
+                            {idid === null ? <li><Link to="/login">login</Link></li> : <>{ idid === 'admin' ? <li id="pointer" onClick={()=>{goHome(); Logout();}}>logout</li> : <><li>welcome {idid} 🎈</li><li id="pointer" onClick={()=>{goHome(); Logout();}}>logout</li></>}</>}
+                            {idid === null ? <li><Link to="/join">join</Link></li> : ''}    
                         </ul>
                     </div>
                 </div>
@@ -67,7 +76,7 @@ const Header = () => {
                                     <h2>batman begins</h2>
                                     <ul id="fir_ul">
                                         <li className='fir_li'><Link to="/first">characters</Link></li>
-                                        <li>goods</li>
+                                        <li><Link to="/goods1">goods</Link></li>
                                         <li>3</li>
                                         <li>4</li>
                                         <li>5</li>
@@ -82,7 +91,7 @@ const Header = () => {
                                     <h2>The Dark Knight</h2>
                                     <ul id="fir_ul">
                                         <li className='fir_li'><Link to="/second">characters</Link></li>
-                                        <li>goods</li>
+                                        <li><Link to="/goods2">goods</Link></li>
                                         <li>3</li>
                                         <li>4</li>
                                         <li>5</li>
@@ -97,7 +106,7 @@ const Header = () => {
                                     <h2>The Dark Knight Rises</h2>
                                     <ul id="fir_ul">
                                         <li className='fir_li'><Link to="/third">characters</Link></li>
-                                        <li>goods</li>
+                                        <li><Link to="/goods3">goods</Link></li>
                                         <li>3</li>
                                         <li>4</li>
                                         <li>5</li>

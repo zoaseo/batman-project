@@ -21,6 +21,10 @@
     margin-left: 40%;
     font-size: 20px;
     letter-spacing: 15px;
+    width: 180px;
+    position: absolute;
+    left: 6%;
+    top: 40%;
 }
 #header #ham {
     width: 30px;

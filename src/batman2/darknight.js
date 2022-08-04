@@ -1,6 +1,7 @@
 import Aos from 'aos';
 import React, { useEffect } from 'react';
 import '../components/aos.css';
+import { Link } from 'react-router-dom';
 
 const DarknightComponent = ({ character }) => {
     useEffect(()=> {
@@ -18,7 +19,7 @@ const DarknightComponent = ({ character }) => {
                     <p id='p_title1' className='tt'>{character.actor}</p>
                     <p id='p_title2' className='tt'>{character.role}</p>
                     <div id='p_title3' className='tt'>
-                        <div id="small_detail">Show more</div>
+                        <div id="small_detail"><Link to={`/detailview/${character.id}`}>Show more</Link></div>
                     </div>
                 {/* </div> */}
             {/* </Link> */}

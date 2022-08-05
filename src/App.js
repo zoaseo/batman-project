@@ -4,9 +4,12 @@ import FirstPage from './batman1';
 import SecondPage from './batman2';
 import ThirdPage from './batman3';
 import DetailCharacter from './components/DetailCharacter';
+import DetailGoods from './components/DetailGoods';
+import EditGoods from './components/EditGoods';
 import Header from './components/Header';
 import MemberJoin from './components/MemberJoin';
 import MemberLogin from './components/MemberLogin';
+import MyPage from './components/MyPage';
 import Goods1Page from './goods1';
 import Goods2Page from './goods2';
 import Goods3Page from './goods3';
@@ -29,6 +32,9 @@ function App() {
         <Route path="/goods1" element={<Goods1Page/>}/>
         <Route path="/goods2" element={<Goods2Page/>}/>
         <Route path="/goods3" element={<Goods3Page/>}/>
+        <Route path="/detailview2/:id" element={<DetailGoods/>}/>
+        <Route path="/mypage/:idid" element={<MyPage/>}/>
+        <Route path="/editgoods/:id" element={<EditGoods/>}/>
       </Routes>
     </div>
   );

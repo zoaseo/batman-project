@@ -51,9 +51,10 @@ const Header = () => {
                     <div><h1><Link to="/">BATMAN</Link></h1></div>
                     <div>
                         <ul id="fff">
-                            <li><Link to="detail">insert</Link></li>
+                            {idid === 'admin' ? <li><Link to="/insert">insert</Link></li> : ''}
                             {idid === null ? <li><Link to="/login">login</Link></li> : <>{ idid === 'admin' ? <li id="pointer" onClick={()=>{goHome(); Logout();}}>logout</li> : <><li>welcome {idid} 🎈</li><li id="pointer" onClick={()=>{goHome(); Logout();}}>logout</li></>}</>}
                             {idid === null ? <li><Link to="/join">join</Link></li> : ''}    
+                            {idid === null ? '' :  <li><Link to={`/mypage/${idid}`}>mypage</Link></li>}
                         </ul>
                     </div>
                 </div>

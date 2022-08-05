@@ -3,17 +3,17 @@ import axios from 'axios';
 import useAsync from '../customHook/useAsync';
 import { useParams, useNavigate, Link } from 'react-router-dom';
 import { API_URL } from '../config/contansts';
-import './Detailconcert.css';
+import './DetailGoods.css';
 import CounterContainer from './CounterContainer';
 import { useSelector, useDispatch  } from 'react-redux'
-import {  reset } from '../modules/counter';
+import {  reset } from '../module/counter';
 
-async function getConcerts(id){
-    const response = await axios.get(`${API_URL}/detailview/${id}`);
+async function getGoods(id){
+    const response = await axios.get(`${API_URL}/detailview2/${id}`);
     return response.data;
 }  
 
-const Detailconcert = () => {
+const DetailGoods = () => {
     const dispatch = useDispatch();
     const onReset = () => dispatch(reset());
     const { number } = useSelector(state => (state.counter));
@@ -23,28 +23,24 @@ const Detailconcert = () => {
     const idid = sessionStorage.getItem('loginId');
     const [ goData, setGoData ] = useState({
         c_user_id: "",
-        c_user_title: "",
-        c_user_region: "",
-        c_user_location: "",
-        c_user_date: "",
-        c_user_start: "",
-        c_user_num: "",
+        c_user_name: "",
+        c_user_imgsrc: "",
+        c_user_count: "",
+        c_user_price: "",
     })
-    const [ state ] = useAsync(()=>getConcerts(id),[id]);
-    const { loading, data:concert, error } = state;
+    const [ state ] = useAsync(()=>getGoods(id),[id]);
+    const { loading, data:goods, error } = state;
 
     useEffect(()=>{
         setGoData({
             c_user_id: idid,
-            c_user_title: concert? concert.title : "",
-            c_user_region: concert? concert.location : "",
-            c_user_location: concert? concert.concert_place : "",
-            c_user_date: concert? concert.concertdate : "",
-            c_user_start: concert? concert.start_time : "",
-            c_user_num: number
+            c_user_name: goods? goods.proname : "",
+            c_user_imgsrc: goods? goods.proimgsrc : "",
+            c_user_count: number,
+            c_user_price: goods? goods.price : "",
         })
     // eslint-disable-next-line
-    },[concert, number])
+    },[goods, number])
     useEffect(()=> {
         onReset();
         // eslint-disable-next-line
@@ -67,10 +63,10 @@ const Detailconcert = () => {
         }
     }
 
-    // 콘서트 삭제
+    // 굿즈 삭제
     const onDelete = () => {
         if(window.confirm("정말 삭제하시겠습니까?")){
-            axios.delete(`${API_URL}/delConcert/${id}`)
+            axios.delete(`${API_URL}/delGoods/${id}`)
             .then(result=>{
                 console.log("삭제되었습니다.");
                 navigate("/"); // 리다이렉션 추가
@@ -86,37 +82,30 @@ const Detailconcert = () => {
 
     if(loading)  return <div className="spinner_bg"><div className="spinner"><div className="cube1"></div><div className="cube2"></div></div></div>
     if(error) return <div>에러가 발생했습니다.</div>
-    if(!concert) return null;
+    if(!goods) return null;
     return (
-        <div>
-
-            <div id="detail_concert">
-                <div id='btns'>
-                {idid === 'admin' ?  <button><Link to={`/editConcert/${id}`}>수정</Link></button> : ''} 
-                {idid === 'admin' ?  <button onClick={onDelete}>삭제</button> : ''} 
-                </div>
-                <div id="left_detail">
-                    
-                    <div id="detail_img"><img src={`../${concert.imgsrc}`} alt="singer_pic" /></div>
-                </div>
-                <div id="right_detail">
-                    <span id="span_title">{concert.title}</span>
-                    <div id="div_singer">{concert.singer}</div>
-                    <div id="div_genre">{concert.genre}</div>
-                    <span id="span_locaion">{concert.location}</span>
-                    <div>{concert.concert_place}</div>
-                    <div id="div_date">{concert.concertdate} / ₩{concert.price}</div>
-                    <div>🕒 공연 시간 {concert.start_time}시부터 {concert.end_time}시까지</div>
-                    <div id="gopurchace">
-                        <CounterContainer />
-                        <div id="outerpur"><button id="purchace" onClick={addReserve}>티켓 예매하기</button></div>
-                    </div>
+        <div id="detail_goods">
+            <div id="back">
+            </div>
+            <div id="bg"></div>
+            <div id='btns'>
+            {idid === 'admin' ?  <button><Link to={`/editgoods/${id}`}>수정</Link></button> : ''} 
+            {idid === 'admin' ?  <button onClick={onDelete}>삭제</button> : ''} 
+            </div>
+            <div id="left_detail">
+                <div id="detail_img"><img src={`../${goods.proimgsrc}`} alt="goodsimg" /></div>
+            </div>
+            <div id="right_detail">
+                <p id="p_title1">{goods.proname}</p>
+                <p id="p_title2">{goods.prodescript}</p>
+                <p id="p_title3">가격: {Number(goods.price)*number}원</p>
+                <div id="gopurchace">
+                    <CounterContainer />
+                    <button id="purchace" onClick={addReserve}>장바구니 담기</button>
                 </div>
             </div>
-            <div id="div_description">{concert.description}</div>
-
         </div>
     );
 };
 
-export default Detailconcert;
+export default DetailGoods;

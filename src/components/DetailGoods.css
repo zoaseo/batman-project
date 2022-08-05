@@ -1,0 +1,94 @@
+#detail_goods {
+    /* background-color: tomato; */
+    width: 100%;
+    height: 100%;
+}
+#bg {
+    width: 800px;
+    height: 600px;
+    background-color: rgba(0, 0, 0, 0.5);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+#detail_goods #left_detail {
+    background-color: aqua;
+    width: 380px;
+    height: 500px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 30%;
+}
+#detail_goods #left_detail img {
+    width: 100%;
+    height: 100%;
+    filter: brightness(70%);
+}
+
+#detail_goods #right_detail {
+    /* background-color: tomato; */
+    width: 330px;
+    height: 500px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 52%;
+    /* text-align: center; */
+    color: #ddd;
+}
+#p_title1 {
+    position: absolute;
+    top: 0;
+    left: 2%;
+    font-size: 33px;
+}
+#p_title2 {
+    position: absolute;
+    top: 42%;
+    left: 5%;
+}
+#p_title3 {
+    position: absolute;
+    top: 90%;
+    left: 55%;
+    font-size: 20px;
+}
+#gopurchace {
+    /* background-color: aqua; */
+    width: 250px;
+    height: 30px;
+    position: absolute;
+    top: 78%;
+    left: 17%;
+    display: flex;
+}
+#purchace {
+    width: 120px;
+    height: 38px;
+    background-color: rgba(255, 255, 255, 0.5);
+    padding: 5px;
+    color: #3d3d3d;
+    font-size: 15px;
+    cursor: pointer;
+    margin-left: 30px;
+}
+
+#detail_goods #btns {
+    /* background-color: tomato; */
+    width: 100px;
+    position: absolute;
+    left: 30%;
+    top: 20%;
+}
+#detail_goods #btns button {
+    background-color: rgba(255, 255, 255, 0.5);
+    padding: 3px;
+    color: #3d3d3d;
+    font-size: 13px;
+    cursor: pointer;
+    margin: 0 2px;
+    width: 38px;
+    height: 30px;
+}

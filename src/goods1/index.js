@@ -24,7 +24,7 @@ const Goods1Page = () => {
             <div className='titlelogo'>
                 <h1>Batman Begins<br/>2005</h1>
             </div>
-            <div id="whole">
+            <div id="whole2">
                 <ul>
                     {goods.map(goods=>(
                         <Goods1Component key={goods.id} goods={goods}/>

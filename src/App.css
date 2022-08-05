@@ -110,51 +110,86 @@ font-family: 'Noto Sans KR', sans-serif;  한글 */
     font-size: 17px;
 }
 
+#whole2 {
+    /* background-color: tomato; */
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    /* font-family: 'Noto Sans KR', sans-serif; */
+    font-family: 'Montserrat', sans-serif;
+    color: #ddd;
+    /* background-color: aqua; */
+    position: relative;
+}
+#whole2 ul {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 25%;
+    width: 80%;
+    height: 700px;
+    /* background-color: tomato; */
+    display: flex;
+    flex-wrap: wrap;
+}
+#whole2 ul li {
+    width: 20%;
+    margin: 0 1.5%;
+    /* background-color: aliceblue; */
+    text-align: center;
+    position: relative;
+}
+
 .GContent {
     position: relative;
     background-color: rgba(0, 0, 0, 0.5);
-    height: 310px;
+    height: 300px;
     padding: 15px;
     border-radius: 20px;
 }
 #gimg {
-    width: 200px;
-    height: 280px;
+    width: 150px;
+    height: 200px;
     position: absolute;
+    top: 60px;
     left: 3%;
 }
 #li_right {
     position: absolute;
-    width: 200px;
+    width: 300px;
     height: 250px;
     right: 0;
+    /* background-color: tomato; */
 }
 #gimg img {
     width: 100%;
     height: 100%;
+    filter: brightness(50%);
 }
 
 #g_title1 {
     position: absolute;
-    right: 10%;
-    top: 5%;
+    right: 20%;
+    top: 2%;
     width: 90%;
     font-size: 18px;
 }
 #g_title2 {
     position: absolute;
     top: 50%;
+    left: 75%;
     width: 100%;
     font-size: 13px;
 }
 #g_title3 {
     position: absolute;
     top: 85%;
+    left: 75%;
     width: 100%;
 }
 #g_title4 {
     position: absolute;
-    top: 100%;
+    top: 102%;
     width: 100%;
     transition: 0.5s;
 }
@@ -171,4 +206,23 @@ font-family: 'Noto Sans KR', sans-serif;  한글 */
     color: #3d3d3d;
     font-size: 15px;
     cursor: pointer;
+}
+
+/* 카운터 */
+#counter {
+    display: flex;
+}
+#counter h2 {
+    margin: 0 15px;
+    font-size: 20px;
+}
+#counter button {
+    width: 35px;
+    height: 30px;
+    background-color: rgba(255, 255, 255, 0.5);
+    padding: 3px;
+    color: #3d3d3d;
+    font-size: 15px;
+    cursor: pointer;
+    margin-top: 2px;
 }

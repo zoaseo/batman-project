@@ -1,0 +1,43 @@
+#editgoods {
+    /* background-color: tomato; */
+    width: 100%;
+    height: 100%;
+}
+#editgoods form {
+    width: 800px;
+    height: 800px;
+    background-color: rgba(0, 0, 0, 0.5);
+    position: absolute;
+    top: 53%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    padding: 50px;
+}
+/* #editgoods form table {
+    background-color: aqua;
+} */
+#editgoods form tr {
+    height: 30px;
+    background-color: tomato;
+}
+/* #editgoods form th {
+    height: 10px;
+    background-color: tomato;
+} */
+#editgoods form #gone {
+    height: 10px;
+    background-color: aqua;
+}
+#editgoods form td:nth-child(1) {
+    /* background-color: aqua; */
+    width: 12%;
+}
+#imgimgimg {
+
+}
+#imgimgimg img {
+    width: 0;
+}
+#editgoods form input {
+    font-size: 15px;
+}

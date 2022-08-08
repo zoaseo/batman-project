@@ -58,7 +58,6 @@ font-family: 'Noto Sans KR', sans-serif;  한글 */
     top: 25%;
     width: 70%;
     height: 750px;
-    /* background-color: tomato; */
     display: flex;
     flex-wrap: wrap;
 }
@@ -80,6 +79,10 @@ font-family: 'Noto Sans KR', sans-serif;  한글 */
 #whole ul li img {
     width: 100%;
     filter: brightness(60%);
+    transition: 0.5s;
+}
+#whole ul li:hover img {
+    filter: brightness(80%);
 }
 .AllContent {
     /* display: flex; */
@@ -94,11 +97,11 @@ font-family: 'Noto Sans KR', sans-serif;  한글 */
 }
 #p_title1 {
     font-size: 12px;
-    top: 50%;
+    top: 52%;
 }
 #p_title2 {
     font-size: 16px;
-    top: 56%;
+    top: 58%;
 }
 #p_title3 {
     font-size: 15px;
@@ -110,32 +113,28 @@ font-family: 'Noto Sans KR', sans-serif;  한글 */
     font-size: 17px;
 }
 
+/* 굿즈 */
 #whole2 {
-    /* background-color: tomato; */
     width: 100%;
     height: 100vh;
     position: relative;
-    /* font-family: 'Noto Sans KR', sans-serif; */
     font-family: 'Montserrat', sans-serif;
     color: #ddd;
-    /* background-color: aqua; */
     position: relative;
 }
 #whole2 ul {
     position: absolute;
-    left: 50%;
+    left: 53.15%;
     transform: translateX(-50%);
     top: 25%;
     width: 80%;
     height: 700px;
-    /* background-color: tomato; */
     display: flex;
     flex-wrap: wrap;
 }
 #whole2 ul li {
     width: 20%;
     margin: 0 1.5%;
-    /* background-color: aliceblue; */
     text-align: center;
     position: relative;
 }
@@ -159,7 +158,6 @@ font-family: 'Noto Sans KR', sans-serif;  한글 */
     width: 300px;
     height: 250px;
     right: 0;
-    /* background-color: tomato; */
 }
 #gimg img {
     width: 100%;

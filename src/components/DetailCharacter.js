@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import axios from 'axios';
 import useAsync from '../customHook/useAsync';
 import { useParams, useNavigate, Link } from 'react-router-dom';
@@ -13,7 +13,6 @@ async function getCharacters(id){
 const DetailCharacter = () => {
     const { id } = useParams();
     const navigate = useNavigate();
-    // const idid = sessionStorage.getItem('loginId');
     const [ state ] = useAsync(()=>getCharacters(id),[id]);
     const { loading, data:character, error } = state;
 

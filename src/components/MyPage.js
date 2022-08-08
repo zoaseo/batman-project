@@ -5,6 +5,7 @@ import './MyPage.css';
 import { API_URL } from '../config/contansts';
 import MypageComponent from './MypageComponent';
 import { useParams } from 'react-router-dom';
+import { getCookie } from '../util/cookie';
 
 const MyPage = () => {
     async function getOrder(idid){
@@ -14,6 +15,7 @@ const MyPage = () => {
     const { idid } = useParams();
     const [ state ] = useAsync(()=>getOrder(idid),[idid]);
     const { loading, data: datas, error } = state;
+    const uname = getCookie('userName');
     if(loading)  return <div className="spinner_bg"><div className="spinner"><div className="cube1"></div><div className="cube2"></div></div></div>
     if(error) return <div>에러가 발생했습니다.</div>
     if(!datas) return <div></div>;
@@ -27,7 +29,7 @@ const MyPage = () => {
                     <tbody>
                         <tr>
                             <th colSpan={7}>
-                                {idid}님의 장바구니입니다.
+                                {uname}님의 장바구니입니다.
                             </th>
                         </tr>
                         <tr id="table_tr">

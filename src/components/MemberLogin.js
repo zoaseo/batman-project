@@ -1,60 +1,65 @@
 import React, { useState } from 'react';
-import './MemberLogin.css'
-import { API_URL } from '../config/contansts';
 import { Link, useNavigate } from 'react-router-dom';
 import axios from 'axios';
-// import { useResultContext } from '../Contexts/context';
+import './MemberLogin.css'
+import { API_URL } from '../config/contansts';
+import { setCookie } from '../util/cookie';
+import { useDispatch } from 'react-redux';
+import { goToHome, setLogin } from '../module/logincheck';
 
-export const MemberLogin = () => { 
+const MemberLogin = () => {
+    const dispatch = useDispatch();
     const navigate = useNavigate();
-    // eslint-disable-next-line
-    let [loginId, setLoginId] = useState("");
-    // eslint-disable-next-line
-    let [loginPassword, setLoginPassword] = useState("");
-    // const { savedLoginId, setSavedLoginId } = useResultContext();
-    // const { savedLoginPassword, setSavedLoginPassword } = useResultContext("")
-    // eslint-disable-next-line
-    let [savedLoginId, setSavedLoginId] = useState("");
-    // eslint-disable-next-line
-    let [savedLoginPassword, setSavedLoginPassword] = useState("");
-    const Login = async () => {
-        let userId = document.querySelector('#userID');
-        let userPw = document.querySelector('#userPW');
-        if(userId.value === "" || userPw.value === "") {
-            alert("아이디와 비밀번호 모두 입력해주세요");
-        } else {
-            const response = await axios.get(`${API_URL}/getId/${userId.value}`);
-            const getId = response.data;
-            const response2 = await axios.get(`${API_URL}/getPw/${userId.value}`);
-            const getPw = response2.data;
-
-            if(getId.length <= 0) {
-                alert("등록된 아이디가 없습니다.");
-            } else {
-                const getId2 = getId[0].userId;
-                const getPw2 = getPw[0].password;
-                // eslint-disable-next-line
-                let userId_value = userId.value;
-                let userPw_value = userPw.value;
-                if(userPw_value === getPw2) {
-                    sessionStorage.setItem("loginId", getId2);
-                    sessionStorage.setItem("loginPassword", getPw2);
-                    setSavedLoginId(sessionStorage.getItem("loginId"));
-                    setSavedLoginPassword(sessionStorage.getItem("loginPassword"));
-                    console.log(JSON.stringify(sessionStorage));
-                    navigate('/');
-                } else {
-                    alert("비밀번호가 일치하지 않습니다.");
+    const [ loginData, setLoginData ] = useState({
+        userId: "",
+        password: ""
+    })
+    const onChange = (e) => {
+        const { name, value } = e.target;
+        setLoginData({
+            ...loginData,
+            [name]:value
+        })
+    }
+    const onSubmit = (e) => {
+        e.preventDefault();
+        // 인풋에 입력했는지 체크
+        if(loginData.userId === '' || loginData.password === ''){
+            alert('이메일과 비밀번호를 입력해주세요');
+        }else {
+            axios.post(`${API_URL}/login`, loginData)
+            // 로그인이 되었을 때
+            .then(result=>{
+                let { userId, userName } = result.data;
+                console.log(result);
+                // usermail에 값이 있을 때
+                if(userId !== null && userId !== '' && userId !== undefined){
+                    alert('로그인되었습니다.');
+                    // 현재시간 객체를 생성
+                    let expires = new Date();
+                    // 60분 더한 값으로 변경
+                    expires.setMinutes(expires.getMinutes()+60);
+                    setCookie('userId', `${userId}`, {path: '/', expires});
+                    setCookie('userName', `${userName}`, {path: '/', expires});
+                    dispatch(setLogin());
+                    dispatch(goToHome(navigate('/')));
+                }else {
+                    alert('아이디와 비밀번호를 확인해주세요');
                 }
-            }
+            })
+            .catch(e=>{
+                console.log(e)
+                // alert('이메일과 비밀번호를 확인해주세요22');  // sdlfjljfdlasjfdlajflasfjlasfjl 원인불명
+            })
         }
     }
+
 
     return (
     <div id="memberLogin">
         <div id="back">
         </div>
-        <form id="loginform">
+        <form onSubmit={onSubmit} id="loginform">
             <table>
                 <tbody>
                     <tr>
@@ -65,23 +70,19 @@ export const MemberLogin = () => {
                     <tr>
                         <td className='login_left'>아이디</td>
                         <td className='login_right'>
-                            <input type="text" id="userID" name="userID" onChange={(e)=>{
-                                    setLoginId(e.target.value);
-                            }}/>
+                            <input type="text" id="userID" value={loginData.userId} onChange={onChange} name="userId"/>
                         </td>
                     </tr>
                     <tr>
                         <td className='login_left'>비밀번호</td>
                         <td className='login_right'>
-                        <input type="password" id="userPW" name="userPW" onChange={(e) => {
-                            setLoginPassword(e.target.value);
-                        }}/>
+                        <input type="password" id="userPW" value={loginData.password} onChange={onChange} name="password"/>
                         </td>
                     </tr>
                     <tr>
-                        <td colSpan={2} id="spans">
-                            <span onClick={Login} id="span_login">로그인</span>
-                            <Link to='/join'><span id="span_logout">회원가입</span></Link>
+                        <td colSpan={2} id="btns">
+                            <button type="submit">로그인</button>
+                            <Link to='/join'><button>회원가입</button></Link>
                         </td>
                     </tr>
                 </tbody>

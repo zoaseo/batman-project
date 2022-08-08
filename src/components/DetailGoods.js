@@ -7,6 +7,7 @@ import './DetailGoods.css';
 import CounterContainer from './CounterContainer';
 import { useSelector, useDispatch  } from 'react-redux'
 import {  reset } from '../module/counter';
+import { getCookie } from '../util/cookie';
 
 async function getGoods(id){
     const response = await axios.get(`${API_URL}/detailview2/${id}`);
@@ -20,7 +21,7 @@ const DetailGoods = () => {
     console.log(number);
     const { id } = useParams();
     const navigate = useNavigate();
-    const idid = sessionStorage.getItem('loginId');
+    const uid = getCookie('userId');
     const [ goData, setGoData ] = useState({
         c_user_id: "",
         c_user_name: "",
@@ -33,7 +34,7 @@ const DetailGoods = () => {
 
     useEffect(()=>{
         setGoData({
-            c_user_id: idid,
+            c_user_id: uid,
             c_user_name: goods? goods.proname : "",
             c_user_imgsrc: goods? goods.proimgsrc : "",
             c_user_count: number,
@@ -47,7 +48,7 @@ const DetailGoods = () => {
     },[])
 
     function addReserve(){
-        if(window.confirm("예매하시겠습니까?") && idid){
+        if(window.confirm("장바구니에 담으시겠습니까?") && uid){
             axios.put(`${API_URL}/addReservation`, goData)
             .then((result)=>{
                 console.log(result);
@@ -55,10 +56,10 @@ const DetailGoods = () => {
             .catch(e=>{
                 console.log(e);
             })
-            navigate(`/mypage/${idid}`);
+            navigate(`/mypage/${uid}`);
         } 
          else {
-            if(idid) alert("예매가 취소되었습니다.");
+            if(uid) alert("취소되었습니다.");
             else alert('로그인 후 이용바랍니다.')
         }
     }
@@ -89,16 +90,16 @@ const DetailGoods = () => {
             </div>
             <div id="bg"></div>
             <div id='btns'>
-            {idid === 'admin' ?  <button><Link to={`/editgoods/${id}`}>수정</Link></button> : ''} 
-            {idid === 'admin' ?  <button onClick={onDelete}>삭제</button> : ''} 
+            {uid === 'admin' ?  <button><Link to={`/editgoods/${id}`}>수정</Link></button> : ''} 
+            {uid === 'admin' ?  <button onClick={onDelete}>삭제</button> : ''} 
             </div>
             <div id="left_detail">
-                <div id="detail_img"><img src={`../${goods.proimgsrc}`} alt="goodsimg" /></div>
+                <div id="detail_img"><img src={`../img/${goods.proimgsrc}`} alt="goodsimg" /></div>
             </div>
             <div id="right_detail">
-                <p id="p_title1">{goods.proname}</p>
-                <p id="p_title2">{goods.prodescript}</p>
-                <p id="p_title3">가격: {Number(goods.price)*number}원</p>
+                <p id="d_title1">{goods.proname}</p>
+                <p id="d_title2">{goods.prodescript}</p>
+                <p id="d_title3">가격: {Number(goods.price)*number}원</p>
                 <div id="gopurchace">
                     <CounterContainer />
                     <button id="purchace" onClick={addReserve}>장바구니 담기</button>

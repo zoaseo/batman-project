@@ -22,7 +22,7 @@ const MypageComponent = ({data}) => {
 
     return (
         <tr>
-            <td id="imgtd"><img src={`/${data.user_imgsrc}`} alt="imgpro"/></td>
+            <td id="imgtd"><img src={`../img/${data.user_imgsrc}`} alt="imgpro"/></td>
             <td>{data.user_name}</td>
             <td>{data.user_count}</td>
             <td>{Number(data.user_price)*Number(data.user_count)}</td>

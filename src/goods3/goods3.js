@@ -12,7 +12,7 @@ const Goods3Component = ({ goods }) => {
     return (
         <li data-aos="fade-up" className="GContent">
             <div>
-                <div id="gimg"><img src={`/${goods.proimgsrc}`} alt="actor"/></div>
+                <div id="gimg"><img src={`img/${goods.proimgsrc}`} alt="actor"/></div>
             </div>
             <div id="li_right">
                 <p id='g_title1' className='tt'>{goods.proname}</p>

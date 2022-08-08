@@ -1,9 +1,11 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import './Header.css';
+import { getCookie, removeCookie } from '../util/cookie';
+import { setLogout } from '../module/logincheck';
+import { useDispatch, useSelector } from 'react-redux';
 
 const Header = () => {
-    const idid = sessionStorage.getItem('loginId');
     const Navigate = useNavigate();
     function goHome() {
         Navigate('/');
@@ -34,10 +36,18 @@ const Header = () => {
         const three = document.querySelector('#three');
         three.classList.toggle('ontoggle');
     }
-    const Logout = async () => {
-        sessionStorage.clear();
-        console.log(JSON.stringify(sessionStorage));
+    const uname = getCookie('userName');
+    const uid = getCookie('userId');
+    const isLogin = useSelector(state=>state.logincheck.isLogin);
+    const dispatch = useDispatch();
+    const logoutClick = () => {
+        removeCookie('userName');
+        removeCookie('userId');
+        dispatch(setLogout());
+        alert('로그아웃되었습니다.')
     }
+    useEffect(()=>{},[isLogin]);
+    console.log(isLogin);
     return (
         <div id="header">
             {/* <div id="back">
@@ -51,10 +61,10 @@ const Header = () => {
                     <div><h1><Link to="/">BATMAN</Link></h1></div>
                     <div>
                         <ul id="fff">
-                            {idid === 'admin' ? <li><Link to="/insert">insert</Link></li> : ''}
-                            {idid === null ? <li><Link to="/login">login</Link></li> : <>{ idid === 'admin' ? <li id="pointer" onClick={()=>{goHome(); Logout();}}>logout</li> : <><li>welcome {idid} 🎈</li><li id="pointer" onClick={()=>{goHome(); Logout();}}>logout</li></>}</>}
-                            {idid === null ? <li><Link to="/join">join</Link></li> : ''}    
-                            {idid === null ? '' :  <li><Link to={`/mypage/${idid}`}>mypage</Link></li>}
+                            {uname === 'admin' ? <li><Link to="/insert">insert</Link></li> : ''}
+                            {isLogin === false ? <li><Link to="/login">login</Link></li> : <>{ uname === 'admin' ? <li id="pointer" onClick={()=>{goHome(); logoutClick();}}>logout</li> : <><li>welcome {uname}</li><li id="pointer" onClick={()=>{goHome(); logoutClick();}}>logout</li></>}</>}
+                            {isLogin === false ? <li><Link to="/join">join</Link></li> : ''}    
+                            {isLogin === false ? '' :  <li><Link to={`/mypage/${uid}`}>mypage</Link></li>}
                         </ul>
                     </div>
                 </div>
@@ -83,7 +93,9 @@ const Header = () => {
                                         <li>5</li>
                                     </ul>
                                 </li>
-                                <li><div onClick={OpenUl}>∨</div></li>  
+                                <li><div id='down' onClick={OpenUl}>
+                                    <img src="../img/down.png" alt="down"/>
+                                    </div></li>  
                             </ul>
                         </li>
                         <li>

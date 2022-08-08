@@ -7,6 +7,7 @@ import DetailCharacter from './components/DetailCharacter';
 import DetailGoods from './components/DetailGoods';
 import EditGoods from './components/EditGoods';
 import Header from './components/Header';
+import CreateGoods from './components/CreateGoods';
 import MemberJoin from './components/MemberJoin';
 import MemberLogin from './components/MemberLogin';
 import MyPage from './components/MyPage';
@@ -14,9 +15,20 @@ import Goods1Page from './goods1';
 import Goods2Page from './goods2';
 import Goods3Page from './goods3';
 import Mainpage from './main';
+import { useEffect } from 'react';
+import { setLogin } from './module/logincheck';
+import { getCookie } from './util/cookie';
+import { useDispatch } from 'react-redux';
 
 
 function App() {
+  const dispatch = useDispatch();
+  const uname = getCookie('userName');
+  useEffect(()=>{
+    if(uname){
+      dispatch(setLogin())
+    }
+  },[])
   return (
     <div className="App">
       <Header/>
@@ -25,7 +37,9 @@ function App() {
         <Route path="/first" element={<FirstPage/>}/>
         <Route path="/second" element={<SecondPage/>}/>
         <Route path="/third" element={<ThirdPage/>}/>
+        {/* <Route path="/login" element={<MemberLogin/>}/> */}
         <Route path="/login" element={<MemberLogin/>}/>
+        {/* <Route path="/join" element={<MemberJoin/>}/> */}
         <Route path="/join" element={<MemberJoin/>}/>
         <Route path="/detail" element={<DetailCharacter/>}/>
         <Route path="/detailview/:id" element={<DetailCharacter/>}/>
@@ -35,6 +49,7 @@ function App() {
         <Route path="/detailview2/:id" element={<DetailGoods/>}/>
         <Route path="/mypage/:idid" element={<MyPage/>}/>
         <Route path="/editgoods/:id" element={<EditGoods/>}/>
+        <Route path="/insert" element={<CreateGoods/>}/>
       </Routes>
     </div>
   );

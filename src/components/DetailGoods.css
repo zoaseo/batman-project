@@ -38,18 +38,18 @@
     /* text-align: center; */
     color: #ddd;
 }
-#p_title1 {
+#d_title1 {
     position: absolute;
     top: 0;
     left: 2%;
     font-size: 33px;
 }
-#p_title2 {
+#d_title2 {
     position: absolute;
     top: 42%;
     left: 5%;
 }
-#p_title3 {
+#d_title3 {
     position: absolute;
     top: 90%;
     left: 55%;

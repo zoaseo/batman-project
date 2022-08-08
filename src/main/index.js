@@ -58,7 +58,7 @@ const Mainpage = () => {
         <div id='wrap'>
             <div id="back">
             </div>
-            <div id="choice">
+            {/* <div id="choice">
                 <button id="go" className='gostyle'>
                     <span><Link to="/first">click</Link></span>
                     <img src="/img/go.png" alt="go"/>
@@ -76,7 +76,7 @@ const Mainpage = () => {
                     <li onClick={Titlefly2}>The Dark Knight<br/>2008</li>
                     <li onClick={Titlefly3}>The Dark Knight Rises<br/>2012</li>
                 </ul>
-            </div>
+            </div> */}
         </div>
     );
 };

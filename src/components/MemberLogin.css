@@ -21,18 +21,20 @@ table {
 .login_right {
     width: 75%;
 }
-#span_login {
-    margin-right: 10%;
-}
-#span_logout {
-    margin-left: 10%;
-}
 #loginth {
     padding: 0;
 }
 #loginform tr {
     height: 100px;
 }
-#spans span {
+#memberLogin input {
+    font-size: 18px;
+}
+#memberLogin #btns button {
+    background-color: rgba(255, 255, 255, 0.5);
+    margin: 0 12px;
+    padding: 3px;
+    color: #3d3d3d;
+    font-size: 15px;
     cursor: pointer;
 }

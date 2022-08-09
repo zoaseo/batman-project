@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import useAsync from '../customHook/useAsync';
 import axios from 'axios';
 // import { Link } from 'react-router-dom';
@@ -11,6 +11,13 @@ async function getGoods(){
 }
 
 const Goods1Page = () => {
+    const introText = document.querySelectorAll(".titlelogo span");
+    useEffect(()=>{
+        let timer = 100;
+        introText.forEach((item) => {
+          item.style.animation = `fade 500ms ${(timer += 150)}ms forwards`;
+        });
+      },[introText])
     const [state] = useAsync(getGoods, [])
     const { loading, data: goods, error } = state;
     if(loading)
@@ -22,7 +29,21 @@ const Goods1Page = () => {
             <div id="back">
             </div>
             <div className='titlelogo'>
-                <h1>Batman Begins<br/>2005</h1>
+                <h1>
+                    <span>B</span>
+                    <span>a</span>
+                    <span>t</span>
+                    <span>m</span>
+                    <span>a</span>
+                    <span>n</span>
+                    <span> </span>
+                    <span>B</span>
+                    <span>e</span>
+                    <span>g</span>
+                    <span>i</span>
+                    <span>n</span>
+                    <span>s</span>
+                </h1>
             </div>
             <div id="whole2">
                 <ul>

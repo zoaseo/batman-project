@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect} from 'react';
 import useAsync from '../customHook/useAsync';
 import axios from 'axios';
 import { API_URL } from '../config/contansts.js';
@@ -9,6 +9,13 @@ async function getCharacters(){
     return response.data;
 }
 const ThirdPage = () => {
+    const introText = document.querySelectorAll(".titlelogo span");
+    useEffect(()=>{
+        let timer = 100;
+        introText.forEach((item) => {
+          item.style.animation = `fade 500ms ${(timer += 150)}ms forwards`;
+        });
+      },[introText])
     const [state] = useAsync(getCharacters, [])
     const { loading, data: characters, error } = state;
     if(loading)
@@ -20,7 +27,29 @@ const ThirdPage = () => {
             <div id="back">
             </div>
             <div className='titlelogo'>
-                <h1>The Dark Knight Rises<br/>2012</h1>
+                <h1>
+                    <span>T</span>
+                    <span>h</span>
+                    <span>e</span>
+                    <span> </span>
+                    <span>D</span>
+                    <span>a</span>
+                    <span>r</span>
+                    <span>k</span>
+                    <span> </span>
+                    <span>K</span>
+                    <span>n</span>
+                    <span>i</span>
+                    <span>g</span>
+                    <span>h</span>
+                    <span>t</span>
+                    <span> </span>
+                    <span>R</span>
+                    <span>i</span>
+                    <span>s</span>
+                    <span>e</span>
+                    <span>s</span>
+                </h1>
             </div>
             <div id="whole">
                 <ul>

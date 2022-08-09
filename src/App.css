@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Benne&family=BhuTuka+Expanded+One&family=Montserrat:wght@300&family=Mouse+Memoirs&family=Noto+Sans+KR&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Benne&family=BhuTuka+Expanded+One&family=Cinzel:wght@800&family=Montserrat+Alternates:ital,wght@1,700&family=Montserrat:wght@300&family=Mouse+Memoirs&family=Noto+Sans+KR&display=swap');
 * { padding: 0; margin: 0; box-sizing: border-box; scroll-behavior: smooth;}
 li { list-style: none; }
 a { text-decoration: none; color: inherit;}
@@ -19,21 +19,28 @@ html, body {
     overflow-y: hidden;
 }
 .titlelogo {
-    width: 600px;
+    position: absolute;
+    top: 8%;
+    width: 100%;
     height: 140px;
     text-align: center;
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-    top: 10%;
+    /* position: relative; */
     color: #ddd;
-    /* background-color: tomato; */
+    /* background-color: aqua; */
 }
 .titlelogo h1 {
-    font-size: 60px;
+    /* font-size: 60px;
     font-family: 'Mouse Memoirs', sans-serif;
     letter-spacing: 10px;
-    font-weight: lighter;
+    font-weight: lighter; */
+    /* font-family: 'Cinzel', serif; */
+    font-family: 'Montserrat Alternates', sans-serif;
+    font-size: 160px;
+    font-style: italic;
+    opacity: 0.2;
+    width: 100%;
+    text-align: center;
+    /* background-color: tomato; */
 }
 
 /* font-family: 'BhuTuka Expanded One', cursive; 영어
@@ -53,17 +60,19 @@ font-family: 'Noto Sans KR', sans-serif;  한글 */
 }
 #whole ul {
     position: absolute;
-    left: 50%;
+    left: 53%;
     transform: translateX(-50%);
-    top: 25%;
+    top: 28%;
     width: 70%;
-    height: 750px;
+    height: 650px;
     display: flex;
     flex-wrap: wrap;
+    /* background-color: tomato; */
 }
 #whole ul li {
-    width: 30%;
-    margin: 0 1.5%;
+    width: 10%;
+    height: 180px;
+    margin: 0 10%;
     /* background-color: aliceblue; */
     text-align: center;
     position: relative;
@@ -78,11 +87,13 @@ font-family: 'Noto Sans KR', sans-serif;  한글 */
 }
 #whole ul li img {
     width: 100%;
-    filter: brightness(60%);
+    /* filter: brightness(60%); */
+    filter: grayscale(90%);
     transition: 0.5s;
 }
 #whole ul li:hover img {
-    filter: brightness(80%);
+    /* filter: brightness(80%); */
+    filter: grayscale(20%);
 }
 .AllContent {
     /* display: flex; */
@@ -97,11 +108,13 @@ font-family: 'Noto Sans KR', sans-serif;  한글 */
 }
 #p_title1 {
     font-size: 12px;
-    top: 52%;
+    width: 150px;
+    top: 73%;
 }
 #p_title2 {
     font-size: 16px;
-    top: 58%;
+    width: 150px;
+    top: 83%;
 }
 #p_title3 {
     font-size: 15px;
@@ -124,17 +137,17 @@ font-family: 'Noto Sans KR', sans-serif;  한글 */
 }
 #whole2 ul {
     position: absolute;
-    left: 53.15%;
+    left: 55.5%;
     transform: translateX(-50%);
-    top: 25%;
+    top: 27%;
     width: 80%;
-    height: 700px;
+    height: 680px;
     display: flex;
     flex-wrap: wrap;
 }
 #whole2 ul li {
     width: 20%;
-    margin: 0 1.5%;
+    margin: 0 0.8%;
     text-align: center;
     position: relative;
 }
@@ -162,7 +175,7 @@ font-family: 'Noto Sans KR', sans-serif;  한글 */
 #gimg img {
     width: 100%;
     height: 100%;
-    filter: brightness(50%);
+    /* filter: brightness(50%); */
 }
 
 #g_title1 {
@@ -223,4 +236,12 @@ font-family: 'Noto Sans KR', sans-serif;  한글 */
     font-size: 15px;
     cursor: pointer;
     margin-top: 2px;
+}
+.titlelogo span {
+    opacity: 0;
+}
+@keyframes fade {
+    to {
+        opacity: 1;
+    }
 }

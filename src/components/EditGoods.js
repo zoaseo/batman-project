@@ -30,8 +30,6 @@ const EditGoods = () => {
             c_part: goods? goods.part : "",
         })
     },[goods])
-
-    console.log(formData.c_proimgsrc);
     const onChange = (e) => {
         const { name, value } = e.target;
         setFormData({

@@ -83,7 +83,7 @@
     /* left: 0; */
     top: 0;
     transition: 0.5s;
-    /* z-index: 10; */
+    z-index: 10;
     /* display: none; */
 }
 #sear_ico {
@@ -121,12 +121,13 @@ form input {
     width: 100%;
     height: 600px;
     /* padding: 20px; */
+    transition: 0.5s;
 }
 
 #header_ul h2 {
     font-family: 'Montserrat', sans-serif;
     font-weight: lighter;
-    font-size: 20px;
+    font-size: 22px;
     letter-spacing: 5px;
 }
 .li_flex {
@@ -145,7 +146,7 @@ form input {
 }
 .li_flex > li {
     /* border-bottom: 1px solid #ddd; */
-    padding: 40px 50px;
+    padding: 35px 50px;
 }
 #fir_ul {
     /* background-color: tomato; */
@@ -220,16 +221,61 @@ form input {
     text-align: right;
 }
 
-#down {
-    background-color: tomato;
+.down {
+    /* background-color: tomato; */
     width: 50px;
     height: 50px;
     position: absolute;
     right: 30px;
-    top: 30px;
+    top: 25px;
+    transition: 0.5s;
 }
-#down img {
+.down img {
     width: 100%;
     height: 100%;
     /* background-color: #fff; */
+}
+#d1.go {
+    transform: rotate(180deg);
+}
+#d2.go {
+    transform: rotate(180deg);
+}
+#d3.go {
+    transform: rotate(180deg);
+}
+.dp {
+    position: relative;
+}
+#pointer {
+    cursor: pointer;
+}
+#delBtn button {
+    background-color: rgba(255, 255, 255, 0.5);
+    padding: 3px;
+    color: #3d3d3d;
+    font-size: 15px;
+    cursor: pointer;
+}
+#sear_form {
+    position: absolute;
+    left: 50px;
+    /* background-color: tomato; */
+    width: 450px;
+    height: 400px;
+}
+#sear_form input {
+    z-index: 10;
+}
+#sear_form ul {
+    /* background-color: tomato; */
+    width: 500px;
+    height: 400px;
+    position: absolute;
+    left: -30px;
+}
+#sear_form ul li {
+    /* background-color: aqua; */
+    width: 100px;
+    height: 100px;
 }

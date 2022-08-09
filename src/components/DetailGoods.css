@@ -1,59 +1,69 @@
 #detail_goods {
     /* background-color: tomato; */
-    width: 100%;
+    /* width: 100%;
     height: 100%;
+    z-index: -10; */
+    /* z-index: -1000; */
 }
 #bg {
-    width: 800px;
-    height: 600px;
+    width: 1200px;
+    height: 700px;
     background-color: rgba(0, 0, 0, 0.5);
+    /* background-color: tomato; */
     position: absolute;
-    top: 50%;
+    top: 53%;
     left: 50%;
     transform: translate(-50%,-50%);
+    /* z-index: -1000; */
 }
 #detail_goods #left_detail {
-    background-color: aqua;
-    width: 380px;
-    height: 500px;
+    /* opacity: 1; */
+    /* background-color: aqua; */
+    width: 450px;
+    height: 600px;
     position: absolute;
-    top: 50%;
+    top: 53%;
     transform: translateY(-50%);
-    left: 30%;
+    left: 27%;
 }
+
 #detail_goods #left_detail img {
     width: 100%;
     height: 100%;
-    filter: brightness(70%);
+    /* filter: brightness(70%); */
+    /* z-index: -1000000000; */
+    /* opacity: 0.2; */
+    /* display: none; */
 }
 
 #detail_goods #right_detail {
-    /* background-color: tomato; */
-    width: 330px;
-    height: 500px;
+    /* background-color: aqua; */
+    width: 490px;
+    height: 600px;
     position: absolute;
-    top: 50%;
+    top: 53%;
     transform: translateY(-50%);
-    left: 52%;
+    left: 50%;
     /* text-align: center; */
     color: #ddd;
+    
 }
 #d_title1 {
     position: absolute;
     top: 0;
-    left: 2%;
+    left: 10%;
     font-size: 33px;
 }
 #d_title2 {
     position: absolute;
     top: 42%;
-    left: 5%;
+    left: 15%;
 }
 #d_title3 {
     position: absolute;
-    top: 90%;
-    left: 55%;
-    font-size: 20px;
+    top: 93%;
+    left: 63%;
+    font-size: 25px;
 }
 #gopurchace {
     /* background-color: aqua; */
@@ -61,7 +71,7 @@
     height: 30px;
     position: absolute;
     top: 78%;
-    left: 17%;
+    left: 25%;
     display: flex;
 }
 #purchace {
@@ -80,7 +90,7 @@
     width: 100px;
     position: absolute;
     left: 30%;
-    top: 20%;
+    top: 18%;
 }
 #detail_goods #btns button {
     background-color: rgba(255, 255, 255, 0.5);

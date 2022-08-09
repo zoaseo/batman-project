@@ -121,6 +121,16 @@ const MemberJoin = () => {
             alert('사용가능한 아이디입니다.');
         }
     }
+    function emailck() {
+        var text = document.querySelector('#email').value;
+        console.log(text);
+        var regEmail = /^[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*\.[a-zA-Z]{2,3}$/;
+        if (regEmail.test(text) === true) {
+            alert('이메일 형식입니다.');
+        }else {
+            alert('이메일 형식이 아닙니다.')
+        }
+    }
     return (
         <div id="memberJoin">
         <div id="back">
@@ -168,7 +178,8 @@ const MemberJoin = () => {
                     <tr>
                         <td className="join_left">이메일</td>
                         <td className="join_right">
-                        <input className='margin' type="text" name="email" value={formData.email} onChange={onChange}/>
+                            <input placeholder="숫자나 알파벳(소/대문자)@" className='margin' type="text" name="email" id="email" value={formData.email} onChange={onChange}/>
+                            <span id ="emailck" onClick={emailck}>형식확인</span>
                         </td>
                     </tr>
                     <tr>

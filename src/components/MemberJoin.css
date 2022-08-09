@@ -67,3 +67,19 @@ th {
 #joinform input {
     font-size: 18px;
 }
+#email {
+    margin-right: 0;
+}
+#emailck {
+    background-color: rgba(255, 255, 255, 0.5);
+    margin-left: 5px;
+    padding: 3px;
+    color: #3d3d3d;
+    font-size: 15px;
+    cursor: pointer;
+}
+#email::placeholder {
+    font-size: 15px;
+    border: none;
+    color: #bbb;
+}

@@ -18,7 +18,6 @@ const DetailGoods = () => {
     const dispatch = useDispatch();
     const onReset = () => dispatch(reset());
     const { number } = useSelector(state => (state.counter));
-    console.log(number);
     const { id } = useParams();
     const navigate = useNavigate();
     const uid = getCookie('userId');

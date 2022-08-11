@@ -63,10 +63,9 @@
 }
 #qqq #fake {
     position: absolute;
-    left: 180px;
-    top: 3px;
+    left: 177px;
+    top: 5px;
 } 
-
 #editgoods form input {
     font-size: 15px;
 }
@@ -94,7 +93,7 @@ input[type='radio']:checked {
     background-color: rgba(255, 255, 255, 0.5);
     margin-left: 5px;
     padding: 3px;
-    color: #3d3d3d;
+    color: #eee;
     font-size: 15px;
     cursor: pointer;
 }

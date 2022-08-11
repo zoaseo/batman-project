@@ -13,6 +13,7 @@ const DarknightLisesComponent = ({ character }) => {
     let ran = Math.floor(Math.random() * 9);
     return (
         <li data-aos={`${a[ran]}`} className="AllContent">
+            <Link to={`/detailview/${character.id}`}>
         {/* <Link> */}
             {/* <div> */}
                 <div id="imgimg"><img src={`/${character.imgsrc}`} alt="actor"/></div>
@@ -25,7 +26,8 @@ const DarknightLisesComponent = ({ character }) => {
                 </div> */}
             {/* </div> */}
         {/* </Link> */}
-    </li>
+            </Link>
+        </li>
     );
 };
 

@@ -3,12 +3,21 @@ import useAsync from '../customHook/useAsync';
 import axios from 'axios';
 import { API_URL } from '../config/contansts.js';
 import DarknightComponent from './darknight';
+import { useSelector, useDispatch } from 'react-redux';
+import { getSecondCharacters } from '../module/characters';
 
-async function getCharacters(){
-    const response = await axios.get(`${API_URL}/second`);
-    return response.data;
-}
+
+// async function getCharacters(){
+//     const response = await axios.get(`${API_URL}/second`);
+//     return response.data;
+// }
 const SecondPage = () => {
+    const { data:characters, loading, error } = useSelector(state => state.characters);
+    const dispatch = useDispatch();
+    // 컴포넌트 마운트 후 고객 목록 요청
+    useEffect(()=>{
+        dispatch(getSecondCharacters(dispatch));
+    },[dispatch]);
     const introText = document.querySelectorAll(".titlelogo span");
     useEffect(()=>{
         let timer = 100;
@@ -16,8 +25,8 @@ const SecondPage = () => {
           item.style.animation = `fade 500ms ${(timer += 150)}ms forwards`;
         });
       },[introText])
-    const [state] = useAsync(getCharacters, [])
-    const { loading, data: characters, error } = state;
+    // const [state] = useAsync(getCharacters, [])
+    // const { loading, data: characters, error } = state;
     if(loading)
     return <div className="spinner_bg"><div className="spinner"><div className="cube1"></div><div className="cube2"></div></div></div>
     if(error) return <div>에러가 발생했습니다.</div>

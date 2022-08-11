@@ -19,9 +19,11 @@ import { useEffect } from 'react';
 import { setLogin } from './module/logincheck';
 import { getCookie } from './util/cookie';
 import { useDispatch } from 'react-redux';
+import EditMyPage from './components/EditMyPage';
 
 
 function App() {
+
   const dispatch = useDispatch();
   const uname = getCookie('userName');
   useEffect(()=>{
@@ -50,6 +52,7 @@ function App() {
         <Route path="/mypage/:idid" element={<MyPage/>}/>
         <Route path="/editgoods/:id" element={<EditGoods/>}/>
         <Route path="/insert" element={<CreateGoods/>}/>
+        <Route path="/editmypage/:id" element={<EditMyPage/>}/>
       </Routes>
     </div>
   );

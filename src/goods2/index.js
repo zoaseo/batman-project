@@ -4,13 +4,21 @@ import axios from 'axios';
 // import { Link } from 'react-router-dom';
 import { API_URL } from '../config/contansts.js';
 import Goods2Component from './goods2';
+import { useSelector, useDispatch } from 'react-redux';
+import { getSecondGoods } from '../module/goods';
 
-async function getGoods(){
-    const response = await axios.get(`${API_URL}/goods2`);
-    return response.data;
-}
+// async function getGoods(){
+//     const response = await axios.get(`${API_URL}/goods2`);
+//     return response.data;
+// }
 
 const Goods2Page = () => {
+    const { data:goods, loading, error } = useSelector(state => state.goods);
+    const dispatch = useDispatch();
+    // 컴포넌트 마운트 후 고객 목록 요청
+    useEffect(()=>{
+        dispatch(getSecondGoods(dispatch));
+    },[dispatch]);
     const introText = document.querySelectorAll(".titlelogo span");
     useEffect(()=>{
         let timer = 100;
@@ -18,8 +26,8 @@ const Goods2Page = () => {
           item.style.animation = `fade 500ms ${(timer += 150)}ms forwards`;
         });
       },[introText])
-    const [state] = useAsync(getGoods, [])
-    const { loading, data: goods, error } = state;
+    // const [state] = useAsync(getGoods, [])
+    // const { loading, data: goods, error } = state;
     if(loading)
     return <div className="spinner_bg"><div className="spinner"><div className="cube1"></div><div className="cube2"></div></div></div>
     if(error) return <div>에러가 발생했습니다.</div>

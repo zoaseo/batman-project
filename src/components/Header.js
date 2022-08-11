@@ -27,12 +27,10 @@ const Header = () => {
         const ham = document.querySelector('#ham');
         ham.style.opacity = '1';
     }
-    const d1 = document.querySelector("#d1");
-    const d2 = document.querySelector("#d2");
-    const d3 = document.querySelector("#d3");
     function OpenUl () {
         const one = document.querySelector('#one');
         one.classList.toggle('ontoggle');
+        const d1 = document.querySelector("#d1");
         d1.classList.toggle("go");
         const hul = document.querySelector("#header_ul");
         hul.style.top = '200px';
@@ -40,6 +38,7 @@ const Header = () => {
     function OpenUl2 () {
         const two = document.querySelector('#two');
         two.classList.toggle('ontoggle');
+        const d2 = document.querySelector("#d2");
         d2.classList.toggle("go");
         const hul = document.querySelector("#header_ul");
         hul.style.top = '200px';
@@ -47,6 +46,7 @@ const Header = () => {
     function OpenUl3 () {
         const three = document.querySelector('#three');
         three.classList.toggle('ontoggle');
+        const d3 = document.querySelector("#d3");
         d3.classList.toggle("go");
         const hul = document.querySelector("#header_ul");
         hul.style.top = '200px';
@@ -61,41 +61,33 @@ const Header = () => {
         dispatch(setLogout());
         alert('로그아웃되었습니다.')
     }
-    useEffect(()=>{},[isLogin]);
-    // const onChangeSearch = async (e) => {
+    const [ imgSrc , setImgSrc ] = useState([]);
+    useEffect(()=>{},[isLogin, imgSrc]);
 
-    //     const input_value = e.target.value;
-    //     console.log(input_value);
-    //     const response = await axios.get(`${API_URL}/search/${input_value}`);
-    //     console.log(response.data);
-    //     return response.data;
-    // }
-    const [ formData, setFormData ] = useState({
-        c_imgsrc: "",
-        c_actor: "",
-        c_role: ""
-    })
-    // async function getGoods(input_value) {
-    //     const response = await axios.get(`${API_URL}/search/${input_value}`);
-    //     return response.data
-    // }
     const onChangeSearch = async (e) =>{ 
         const input_value = e.target.value;
         console.log(input_value);
         const response = await axios.get(`${API_URL}/search/${input_value}`);
-        console.log(response)
-        console.log(response.data[0].imgsrc)
-        const {imgsrc} = response.data;
-        console.log(imgsrc)
-        // const [state] = useAsync(getGoods(input_value), [input_value])
-        // const { loading, data, error } = state;
-        // useEffect(()=>{
-        //     setFormData({
-        //     ...formData,
-        //     c_actor: data?data.actor:""
-        //     })
-        // },[data])
-        // console.log(formData)
+        setImgSrc([...response.data]);
+        
+    }
+    function onClickForm() {
+        const hul = document.querySelector("#header_ul");
+        hul.style.top = '1000px';
+        const sear_ico2 = document.querySelector('#sear_ico2');
+        sear_ico2.classList.add('do');
+        sear_ico2.classList.remove('do2');
+        const img_flex = document.querySelector("#img_flex");
+        img_flex.style.height = '600px'
+    }
+    function onClickSpan() {
+        const sear_ico2 = document.querySelector('#sear_ico2');
+        sear_ico2.classList.add('do2');
+        sear_ico2.classList.remove('do');
+        const hul = document.querySelector("#header_ul");
+        hul.style.top = '200px';
+        const img_flex = document.querySelector("#img_flex");
+        img_flex.style.height = '0px'
     }
     return (
         <div id="header">
@@ -126,15 +118,18 @@ const Header = () => {
                     </div>
                     <form id='sear_form'>
                         <span id="sear_ico"><img src='../img/search.png' alt='search'/></span>
-                        <input name='search' id='search' onClick={()=>{
-                            const hul = document.querySelector("#header_ul");
-                            hul.style.top = '500px';
-                        }} onKeyUp={onChangeSearch}/>
-                        <ul>
-                            <li>
-                                {/* {response.data} */}
-                                
-                            </li>
+                        <input name='search' id='search' onClick={onClickForm} onKeyUp={onChangeSearch}/>
+                        <span onClick={onClickSpan} id="sear_ico2"><img src="../img/down.png" alt="down"/></span>
+                        <ul id="img_flex">
+                            {imgSrc.map(list=>(
+                                <Link to={`/detailview/${list.id}`}>
+                                    <li>
+                                        <div><img src={`../${list.imgsrc}`} alt='imgli'/></div>
+                                        <p id='li_p'>{list.actor}</p>
+                                        <p id='li_p2'>{list.role}</p>    
+                                    </li>
+                                </Link>
+                                ))}
                         </ul>
                     </form>
                   

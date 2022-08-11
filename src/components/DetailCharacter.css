@@ -12,11 +12,11 @@
 /* 왼쪽 글부분 */
 #left_detail {
     width: 400px;
-    height: 800px;
+    height: 700px;
     /* background-color: aqua; */
     position: absolute;
-    left: 30%;
-    top: 13%;
+    left: 29%;
+    top: 20%;
     z-index: 1;
 }
 #span_actor {
@@ -36,7 +36,7 @@
 }
 #div_description {
     color: #ddd;
-    font-size: 20px;
+    font-size: 19px;
     margin-top: 100px;
     /* background-color: tomato; */
 }

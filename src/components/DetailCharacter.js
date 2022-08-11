@@ -16,7 +16,7 @@ const DetailCharacter = () => {
     const [ state ] = useAsync(()=>getCharacters(id),[id]);
     const { loading, data:character, error } = state;
 
-    // 콘서트 삭제
+    // 캐릭터 삭제
     const onDelete = () => {
         if(window.confirm("정말 삭제하시겠습니까?")){
             axios.delete(`${API_URL}/delCharacter/${id}`)

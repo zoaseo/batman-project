@@ -67,19 +67,19 @@
 }
 #gopurchace {
     /* background-color: aqua; */
-    width: 250px;
-    height: 30px;
+    width: 300px;
+    height: 45px;
     position: absolute;
     top: 78%;
     left: 25%;
     display: flex;
 }
 #purchace {
-    width: 120px;
-    height: 38px;
+    width: 150px;
+    height: 45px;
     background-color: rgba(255, 255, 255, 0.5);
     padding: 5px;
-    color: #3d3d3d;
+    color: #eee;
     font-size: 15px;
     cursor: pointer;
     margin-left: 30px;
@@ -87,18 +87,18 @@
 
 #detail_goods #btns {
     /* background-color: tomato; */
-    width: 100px;
+    width: 150px;
     position: absolute;
-    left: 30%;
+    left: 27%;
     top: 18%;
 }
 #detail_goods #btns button {
     background-color: rgba(255, 255, 255, 0.5);
     padding: 3px;
-    color: #3d3d3d;
+    color: #eee;
     font-size: 13px;
     cursor: pointer;
-    margin: 0 2px;
-    width: 38px;
-    height: 30px;
+    margin: 0 5px;
+    width: 55px;
+    height: 32px;
 }

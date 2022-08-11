@@ -74,13 +74,10 @@ const CreateGoods = () => {
             console.log(e);
         })
     }
-    const imgname = formData.c_proimgsrc;
-    const fakebox = document.querySelector("#fakebox");
     const fake = document.querySelector("#fake");
     function disa(){
         const real = document.querySelector('#real');
         real.style.opacity = 1;
-        fakebox.style.opacity = 0;
         fake.style.opacity = 0;
     }
     return (
@@ -105,7 +102,7 @@ const CreateGoods = () => {
                                 </div>
                                 <p id="qqq">    
                                     <span id='fakebox'>파일 선택 </span> 
-                                    <span id='fake'>{imgname}</span>
+                                    {/* <span id='fake'>{imgname}</span> */}
                                     <input id='real' name="c_proimgsrc" type="file" onClick={disa} onChange={onChangeImage}/>
                                 </p>
                             </td>

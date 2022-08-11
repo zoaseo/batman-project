@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import useAsync from '../customHook/useAsync';
 import './MyPage.css';
@@ -16,10 +16,19 @@ const MyPage = () => {
     const [ state ] = useAsync(()=>getOrder(idid),[idid]);
     const { loading, data: datas, error } = state;
     const uname = getCookie('userName');
+    console.log(datas)
+    const [ pay ,setPay ] = useState({
+        c_user_pay: ""
+    });
+    useEffect(()=>{
+        setPay({
+            c_user_pay: datas? datas.user_pay : "",
+        })
+    },[datas])
+    console.log(pay)
     if(loading)  return <div className="spinner_bg"><div className="spinner"><div className="cube1"></div><div className="cube2"></div></div></div>
     if(error) return <div>에러가 발생했습니다.</div>
     if(!datas) return <div></div>;
-    console.log(datas);
     return (
         <div id="Mypage">
             <div id="back">
@@ -40,6 +49,9 @@ const MyPage = () => {
                         </tr>
                         {datas.length === 0 ? <tr><td id="noreserve" colSpan={6}>담긴 제품이 없습니다.</td></tr>
                         : datas.map((data, index)=>(<MypageComponent key={index} data={data}/> ))}
+                        <tr>
+                            <td>하하{pay.c_user_pay}</td>
+                        </tr>
                     </tbody>
                 </table>
             </form>

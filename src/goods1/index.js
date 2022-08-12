@@ -11,7 +11,6 @@ import { getFirstGoods } from '../module/goods';
 //     const response = await axios.get(`${API_URL}/goods1`);
 //     return response.data;
 // }
-
 const Goods1Page = () => {
     const { data:goods, loading, error } = useSelector(state => state.goods);
     const dispatch = useDispatch();

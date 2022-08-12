@@ -16,16 +16,21 @@ const MyPage = () => {
     const [ state ] = useAsync(()=>getOrder(idid),[idid]);
     const { loading, data: datas, error } = state;
     const uname = getCookie('userName');
-    console.log(datas)
     const [ pay ,setPay ] = useState({
         c_user_pay: ""
     });
+    
+    async function getTotal(idid){
+        const response = await axios.get(`${API_URL}/total/${idid}`);
+        return response.data;
+    }  
+    const [ to ] = useAsync(()=>getTotal(idid),[idid]);
+    const { l, data: data, e } = to;
     useEffect(()=>{
         setPay({
-            c_user_pay: datas? datas.user_pay : "",
+            c_user_pay: data? data.total : "",
         })
-    },[datas])
-    console.log(pay)
+    },[data])
     if(loading)  return <div className="spinner_bg"><div className="spinner"><div className="cube1"></div><div className="cube2"></div></div></div>
     if(error) return <div>에러가 발생했습니다.</div>
     if(!datas) return <div></div>;
@@ -49,12 +54,12 @@ const MyPage = () => {
                         </tr>
                         {datas.length === 0 ? <tr><td id="noreserve" colSpan={6}>담긴 제품이 없습니다.</td></tr>
                         : datas.map((data, index)=>(<MypageComponent key={index} data={data}/> ))}
-                        <tr>
-                            <td>하하{pay.c_user_pay}</td>
-                        </tr>
                     </tbody>
                 </table>
             </form>
+            <div id="total">
+                <p>총주문금액: {pay.c_user_pay}원</p>
+            </div>
         </div>
     );
 };

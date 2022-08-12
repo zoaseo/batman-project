@@ -95,7 +95,7 @@ const MypageComponent = ({data}) => {
                 {count.c_user_count}
                 <span className='btnbtn'><button onClick={increase}>+</button></span>    
             </td>
-            <td>{count.c_user_pay}</td>
+            <td>{count.c_user_pay}원</td>
             <td id="delBtn"><button onClick={onEdit}>수정</button><button onClick={onDelete}>삭제</button></td>
         </tr>
     );

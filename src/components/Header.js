@@ -26,6 +26,26 @@ const Header = () => {
         site_map.style.zIndex = '1';
         const ham = document.querySelector('#ham');
         ham.style.opacity = '1';
+        const one = document.querySelector('#one');
+        one.classList.remove('ontoggle');
+        const d1 = document.querySelector("#d1");
+        d1.classList.remove('go');
+        const two = document.querySelector('#two');
+        two.classList.remove('ontoggle');
+        const d2 = document.querySelector("#d2");
+        d2.classList.remove('go');
+        const three = document.querySelector('#three');
+        three.classList.remove('ontoggle');
+        const d3 = document.querySelector("#d3");
+        d3.classList.remove('go');
+        const sear_ico2 = document.querySelector('#sear_ico2');
+        sear_ico2.classList.remove('do');
+        const hul = document.querySelector("#header_ul");
+        hul.style.top = '200px';
+        const img_flex = document.querySelector("#img_flex");
+        img_flex.style.height = '0px';
+        const search = document.querySelector('#search');
+        search.value = "";
     }
     function OpenUl () {
         const one = document.querySelector('#one');
@@ -69,7 +89,6 @@ const Header = () => {
         console.log(input_value);
         const response = await axios.get(`${API_URL}/search/${input_value}`);
         setImgSrc([...response.data]);
-        
     }
     function onClickForm() {
         const hul = document.querySelector("#header_ul");
@@ -87,7 +106,7 @@ const Header = () => {
         const hul = document.querySelector("#header_ul");
         hul.style.top = '200px';
         const img_flex = document.querySelector("#img_flex");
-        img_flex.style.height = '0px'
+        img_flex.style.height = '0px';
     }
     return (
         <div id="header">

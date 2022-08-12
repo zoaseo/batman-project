@@ -11,6 +11,29 @@ import { getFirstCharacters } from '../module/characters';
 //     const response = await axios.get(`${API_URL}/first`);
 //     return response.data;
 // }
+  function onMouseMove(e) {
+    const www = document.querySelector(".www");
+    console.log(`client: (${e.clientX}, ${e.clientY})`);
+    console.log(`page: (${e.pageX}, ${e.pageY})`);
+    console.log(`offset: (${e.offsetX}, ${e.offsetY})`);
+    console.log('------------------------------------');
+    const mousex = e.clientX - 950;
+    const mousey = e.clientY - 550;
+    console.log(mousex)
+    www.style.left = mousex + 'px';
+    www.style.top = mousey + 'px';
+  }
+  window.onmousewheel = function(e) {
+    const www = document.querySelector("#whole");
+    console.dir(e);
+    if(e.wheelDelta === -120){
+      console.log('wheel down');
+    // console.log(www.offsetWidth)
+    //   ++www.style.width; 
+    } else {
+      console.log('wheel up');
+    }
+  }
 const FirstPage = () => {
     const { data:characters, loading, error } = useSelector(state => state.characters);
     const dispatch = useDispatch();
@@ -52,7 +75,7 @@ const FirstPage = () => {
                     <span>s</span>
                 </h1>
             </div>
-            <div id="whole">
+            <div id="whole" className='www' onMouseDown={onMouseMove}>
                 <ul>
                     {characters.map(character=>(
                         <BeginsComponent key={character.id} character={character}/>

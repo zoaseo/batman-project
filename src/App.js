@@ -31,8 +31,17 @@ function App() {
       dispatch(setLogin())
     }
   },[])
+  // function onMouseMove(e) {
+  //   const www = document.querySelector(".App");
+  //   console.log(`client: (${e.clientX}, ${e.clientY})`);
+  //   console.log(`page: (${e.pageX}, ${e.pageY})`);
+  //   console.log(`offset: (${e.offsetX}, ${e.offsetY})`);
+  //   console.log('------------------------------------');
+  //   www.style.left = e.clientX + 'px';
+  // }
+
   return (
-    <div className="App">
+    <div className="App" >
       <Header/>
       <Routes>
         <Route path="/" element={<Mainpage/>}/>
@@ -56,6 +65,9 @@ function App() {
       </Routes>
     </div>
   );
+
+
+
 }
 
 export default App;

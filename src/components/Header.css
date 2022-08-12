@@ -286,6 +286,7 @@ form input {
 }
 #sear_form input {
     z-index: 10;
+    font-size: 18px;
 }
 
 #img_flex {

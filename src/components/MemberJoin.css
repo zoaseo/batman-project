@@ -35,30 +35,26 @@ th {
     margin: 0 20px;
     margin-bottom: 10px;
 }
-#add_btn {
-    background-color: rgba(255, 255, 255, 0.8);
-    color: #111;
-    margin-left: 5px;
-}
+
 #duCk {
     background-color: rgba(255, 255, 255, 0.5);
-    margin-left: 5px;
+    margin-left: 1.8%;
     padding: 3px;
     color: #eee;
-    font-size: 15px;
+    font-size: 13px;
     cursor: pointer;
 }
 #add_btn {
     background-color: rgba(255, 255, 255, 0.5);
-    margin-left: 5px;
+    margin-left: 1.8%;
     padding: 3px;
     color: #eee;
-    font-size: 15px;
+    font-size: 13px;
     cursor: pointer;
 }
 #btns button {
     background-color: rgba(255, 255, 255, 0.5);
-    margin-left: 5px;
+    margin-left: 2%;
     padding: 5px 15px;
     color: #eee;
     font-size: 15px;
@@ -72,13 +68,18 @@ th {
 }
 #emailck {
     background-color: rgba(255, 255, 255, 0.5);
-    margin-left: 5px;
+    margin-left: 1.8%;
     padding: 3px;
     color: #eee;
-    font-size: 15px;
+    font-size: 13px;
     cursor: pointer;
 }
 #email::placeholder {
+    font-size: 15px;
+    border: none;
+    color: #bbb;
+}
+#pn::placeholder {
     font-size: 15px;
     border: none;
     color: #bbb;

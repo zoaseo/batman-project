@@ -31,6 +31,49 @@ function App() {
       dispatch(setLogin())
     }
   },[])
+  window.onmousewheel = function(e) {
+    const www = document.querySelectorAll("#imgimg");
+    const www2 = document.querySelectorAll("#whole ul");
+    
+    www.forEach((index)=>{
+      const a = index.offsetWidth;
+      if(e.wheelDelta === -120){
+        console.log('wheel down');
+        index.style.width = a - 5 + 'px';
+        console.log(a)
+        if(a < 40){
+          index.style.width = '40px'
+        }
+      } else {
+        console.log('wheel up');
+        index.style.width = a + 8 + 'px';
+
+        if(a > 120){
+          index.style.width = '120px'
+        }
+      }
+    })
+
+    www2.forEach((index)=>{
+      const a = index.offsetWidth;
+      if(e.wheelDelta === -120){
+        console.log('wheel down');
+        index.style.width = a - 10 + 'px';
+        console.log(a)
+        console.log(index)
+        if(a < 880){
+          index.style.width = '880px';
+        }
+      } else {
+        console.log('wheel up');
+        index.style.width = a + 10 + 'px';
+        console.log(a)
+        if(a > 1080){
+          index.style.width = '1080px';
+        }
+      }
+    })
+  }
   // function onMouseMove(e) {
   //   const www = document.querySelector(".App");
   //   console.log(`client: (${e.clientX}, ${e.clientY})`);

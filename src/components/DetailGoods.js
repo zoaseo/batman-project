@@ -46,16 +46,30 @@ const DetailGoods = () => {
         // eslint-disable-next-line
     },[])
 
-    function addReserve(){
-        if(window.confirm("장바구니에 담으시겠습니까?") && uid){
+    async function addReserve(){
+        if(window.confirm("장바구니에 담으시겠습니까?") && uid){       
             axios.put(`${API_URL}/addReservation`, goData)
             .then((result)=>{
                 console.log(result);
+                if(result.data === "있음"){
+                    alert('이미 담겨진 상품입니다.')
+                    window.location.reload();
+                }else {
+                    axios.put(`${API_URL}/addReservation/${id}`)
+                    .then((result)=>{
+                        console.log(result);
+                    })
+                    .catch(e=>{
+                        console.log(e);
+                    })
+                    if(window.confirm("장바구니에 담겼습니다. 마이페이지로 이동하시겠습니까?")){
+                        navigate(`/mypage/${uid}`);
+                    } else {}
+                }
             })
             .catch(e=>{
                 console.log(e);
             })
-            navigate(`/mypage/${uid}`);
         } 
          else {
             if(uid) alert("취소되었습니다.");
@@ -79,8 +93,12 @@ const DetailGoods = () => {
         }
 
     }
-
-    if(loading)  return <div className="spinner_bg"><div className="spinner"><div className="cube1"></div><div className="cube2"></div></div></div>
+    if(loading)  return <div className="spinner_bg"><div class="sk-folding-cube">
+    <div class="sk-cube1 sk-cube"></div>
+    <div class="sk-cube2 sk-cube"></div>
+    <div class="sk-cube4 sk-cube"></div>
+    <div class="sk-cube3 sk-cube"></div>
+  </div></div>
     if(error) return <div>에러가 발생했습니다.</div>
     if(!goods) return null;
     return (

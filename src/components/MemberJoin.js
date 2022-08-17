@@ -51,20 +51,27 @@ const MemberJoin = () => {
             if(userPw.value !== userPwCh.value) {
                 alert('비밀번호가 일치하지 않습니다.');
             }else {
-                if(isNaN(formData.phone)){
-                    alert("전화번호는 숫자만 입력해주세요");
-                    setFormData({
-                        ...formData,
-                        phone: "",
-                    })
-                }
+                // if(isNaN(formData.phone)){
+                //     alert("전화번호는 숫자만 입력해주세요");
+                //     setFormData({
+                //         ...formData,
+                //         phone: "",
+                //     })
+                // }
                 // input에 값이 있는지 체크하고
                 // 입력이 다되어있으면 post전송
-                else if(formData.userId !== "" && formData.password !== "" &&
+                if(formData.userId !== "" && formData.password !== "" &&
                 formData.userName !== "" && formData.phone !== "" &&
                 formData.email !== "" && formData.address !== "" && 
                 formData.adddetail !== ""){
-                    addMember();
+                    console.log(sameCheck)
+                    if(sameCheck && emailCheck){
+                        addMember();
+                    }else if(!sameCheck) {
+                        alert('아이디 중복확인을 해주세요')
+                    }else if(!emailCheck) {
+                        alert('이메일 형식확인을 해주세요')
+                    }
                 }
                 else {
                     alert("모든 기입란에 기입해주세요");
@@ -74,9 +81,11 @@ const MemberJoin = () => {
             alert("등록이 취소되었습니다");
         }
     }
-    function addMember() {
-        axios.post(`${API_URL}/join`,formData)
-        .then(res=>{
+    async function addMember() {
+        await axios.post(`${API_URL}/join`,formData)
+        .then(result=>{
+            console.log(result.data)
+            console.log("안녕")
             alert('등록되었습니다.');
             navigate('/');
         })
@@ -98,6 +107,8 @@ const MemberJoin = () => {
             }
         })
     }
+    const [ sameCheck, setSameCheck ] = useState(false);
+    console.log(sameCheck)
     const OnIdCh = async (e) => {
         let userId = document.querySelector('#id');
         const response = await axios.get(`${API_URL}/idCh`);
@@ -108,29 +119,80 @@ const MemberJoin = () => {
                 sameNum++;
             }
         });
-        if(sameNum !== 0) {
-            setFormData({
-                ...formData,
-                id: "",
-            })
-            alert('중복아이디입니다.');
-
-            console.log(userId)
-            console.log(userId.value)
-        }else {
-            alert('사용가능한 아이디입니다.');
+        if(!userId.value){
+            alert("아이디를 입력해주세요")
+        } else {
+            if(sameNum !== 0) {
+                setFormData({
+                    ...formData,
+                    userId: "",
+                })
+                alert('중복아이디입니다.');
+                
+                console.log(sameCheck)
+                console.log(userId)
+                console.log(userId.value)
+            }else {
+                alert('사용가능한 아이디입니다.');
+                setSameCheck(true);
+            }
         }
+        
     }
+    const [ emailCheck, setEmailCheck ] = useState(false);
     function emailck() {
         var text = document.querySelector('#email').value;
         console.log(text);
         var regEmail = /^[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*\.[a-zA-Z]{2,3}$/;
         if (regEmail.test(text) === true) {
             alert('이메일 형식입니다.');
+            setEmailCheck(true);
         }else {
             alert('이메일 형식이 아닙니다.')
         }
     }
+    function phoneNumber(e) {
+        var { name, value } = e.target;
+        // if (!value) {
+        //   return "";
+        // }
+      
+        value = value.replace(/[^0-9]/g, "");
+      
+        let result = [];
+        let restNumber = "";
+      
+        // 지역번호와 나머지 번호로 나누기
+        if (value.startsWith("02")) {
+          // 서울 02 지역번호
+          result.push(value.substr(0, 2));
+          restNumber = value.substring(2);
+        } else if (value.startsWith("1")) {
+          // 지역 번호가 없는 경우
+          // 1xxx-yyyy
+          restNumber = value;
+        } else {
+          // 나머지 3자리 지역번호
+          // 0xx-yyyy-zzzz
+          result.push(value.substr(0, 3));
+          restNumber = value.substring(3);
+        }
+      
+        if (restNumber.length === 7) {
+          // 7자리만 남았을 때는 xxx-yyyy
+          result.push(restNumber.substring(0, 3));
+          result.push(restNumber.substring(3));
+        } else {
+          result.push(restNumber.substring(0, 4));
+          result.push(restNumber.substring(4));
+        }
+        value = result.filter((val) => val).join("-");
+        setFormData({
+            ...formData,
+            [name]:value
+        })
+        return value;
+      }
     return (
         <div id="memberJoin">
         <div id="back">
@@ -172,7 +234,7 @@ const MemberJoin = () => {
                     <tr>
                         <td className="join_left">전화번호</td>
                         <td className="join_right">
-                        <input className='margin' type="text" name="phone" value={formData.phone} onChange={onChange}/>
+                        <input placeholder="숫자만 입력 가능합니다" id='pn' className='margin' type="text" name="phone" value={formData.phone} onChange={phoneNumber}/>
                         </td>
                     </tr>
                     <tr>

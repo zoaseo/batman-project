@@ -11,6 +11,27 @@ import { getSecondCharacters } from '../module/characters';
 //     const response = await axios.get(`${API_URL}/second`);
 //     return response.data;
 // }
+let move = false;
+function isMoveDown(){
+  move = true;
+}
+function isMoveUp(){
+  move = false;
+}
+function onMouseMove(e) {
+  if(move){
+    const www = document.querySelector(".www");
+    console.log(`client: (${e.clientX}, ${e.clientY})`);
+    console.log(`page: (${e.pageX}, ${e.pageY})`);
+    console.log(`offset: (${e.offsetX}, ${e.offsetY})`);
+    console.log('------------------------------------');
+    const mousex = e.clientX - 900;
+    const mousey = e.clientY - 500;
+    console.log(mousex)
+    www.style.left = mousex + 'px';
+    www.style.top = mousey + 'px';
+  }
+}
 const SecondPage = () => {
     const { data:characters, loading, error } = useSelector(state => state.characters);
     const dispatch = useDispatch();
@@ -27,8 +48,12 @@ const SecondPage = () => {
       },[introText])
     // const [state] = useAsync(getCharacters, [])
     // const { loading, data: characters, error } = state;
-    if(loading)
-    return <div className="spinner_bg"><div className="spinner"><div className="cube1"></div><div className="cube2"></div></div></div>
+    if(loading)  return <div className="spinner_bg"><div class="sk-folding-cube">
+    <div class="sk-cube1 sk-cube"></div>
+    <div class="sk-cube2 sk-cube"></div>
+    <div class="sk-cube4 sk-cube"></div>
+    <div class="sk-cube3 sk-cube"></div>
+  </div></div>
     if(error) return <div>에러가 발생했습니다.</div>
     if(!characters) return <div>로딩중입니다.</div>
     return (
@@ -54,7 +79,7 @@ const SecondPage = () => {
                     <span>t</span>
                 </h1>
             </div>
-            <div id="whole">
+            <div id="whole" className='www' onMouseUp={isMoveUp} onMouseDown={isMoveDown} onMouseMove={onMouseMove}>
                 <ul>
                     {characters.map(character=>(
                         <DarknightComponent key={character.id} character={character}/>

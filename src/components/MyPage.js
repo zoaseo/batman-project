@@ -31,7 +31,12 @@ const MyPage = () => {
             c_user_pay: data? data.total : "",
         })
     },[data])
-    if(loading)  return <div className="spinner_bg"><div className="spinner"><div className="cube1"></div><div className="cube2"></div></div></div>
+    if(loading)  return <div className="spinner_bg"><div class="sk-folding-cube">
+    <div class="sk-cube1 sk-cube"></div>
+    <div class="sk-cube2 sk-cube"></div>
+    <div class="sk-cube4 sk-cube"></div>
+    <div class="sk-cube3 sk-cube"></div>
+  </div></div>
     if(error) return <div>에러가 발생했습니다.</div>
     if(!datas) return <div></div>;
     return (

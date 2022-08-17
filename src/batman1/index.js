@@ -28,10 +28,6 @@ function onMouseMove(e) {
 const FirstPage = () => {
     const { data:characters, loading, error } = useSelector(state => state.characters);
     const dispatch = useDispatch();
-    // 컴포넌트 마운트 후 고객 목록 요청
-    useEffect(()=>{
-        dispatch(getFirstCharacters(dispatch));
-    },[dispatch]);
     const introText = document.querySelectorAll(".titlelogo span");
     useEffect(()=>{
         let timer = 100;
@@ -39,11 +35,16 @@ const FirstPage = () => {
           item.style.animation = `fade 500ms ${(timer += 150)}ms forwards`;
         });
       },[introText])
-    if(loading)  return <div className="spinner_bg"><div class="sk-folding-cube">
-    <div class="sk-cube1 sk-cube"></div>
-    <div class="sk-cube2 sk-cube"></div>
-    <div class="sk-cube4 sk-cube"></div>
-    <div class="sk-cube3 sk-cube"></div>
+    // 컴포넌트 마운트 후 고객 목록 요청
+    useEffect(()=>{
+        dispatch(getFirstCharacters(dispatch));
+    },[dispatch]);
+
+    if(loading)  return <div className="spinner_bg"><div className="sk-folding-cube">
+    <div className="sk-cube1 sk-cube"></div>
+    <div className="sk-cube2 sk-cube"></div>
+    <div className="sk-cube4 sk-cube"></div>
+    <div className="sk-cube3 sk-cube"></div>
   </div></div>
     if(error) return <div>에러가 발생했습니다.</div>
     if(!characters) return <div>로딩중입니다.</div>

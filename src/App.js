@@ -30,6 +30,7 @@ function App() {
     if(uname){
       dispatch(setLogin())
     }
+        // eslint-disable-next-line
   },[])
   window.onmousewheel = function(e) {
     const www = document.querySelectorAll("#imgimg");
@@ -91,9 +92,7 @@ function App() {
         <Route path="/first" element={<FirstPage/>}/>
         <Route path="/second" element={<SecondPage/>}/>
         <Route path="/third" element={<ThirdPage/>}/>
-        {/* <Route path="/login" element={<MemberLogin/>}/> */}
         <Route path="/login" element={<MemberLogin/>}/>
-        {/* <Route path="/join" element={<MemberJoin/>}/> */}
         <Route path="/join" element={<MemberJoin/>}/>
         <Route path="/detail" element={<DetailCharacter/>}/>
         <Route path="/detailview/:id" element={<DetailCharacter/>}/>

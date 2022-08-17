@@ -1,7 +1,7 @@
 import React from 'react';
 import axios from 'axios';
 import useAsync from '../customHook/useAsync';
-import { useParams, useNavigate, Link } from 'react-router-dom';
+import { useParams, useNavigate } from 'react-router-dom';
 import { API_URL } from '../config/contansts';
 import './DetailCharacter.css';
 

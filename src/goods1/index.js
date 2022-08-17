@@ -1,8 +1,4 @@
 import React, { useEffect } from 'react';
-import useAsync from '../customHook/useAsync';
-import axios from 'axios';
-// import { Link } from 'react-router-dom';
-import { API_URL } from '../config/contansts.js';
 import Goods1Component from './goods';
 import { useSelector, useDispatch } from 'react-redux';
 import { getFirstGoods } from '../module/goods';

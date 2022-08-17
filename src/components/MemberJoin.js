@@ -143,6 +143,7 @@ const MemberJoin = () => {
     function emailck() {
         var text = document.querySelector('#email').value;
         console.log(text);
+            // eslint-disable-next-line
         var regEmail = /^[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*\.[a-zA-Z]{2,3}$/;
         if (regEmail.test(text) === true) {
             alert('이메일 형식입니다.');

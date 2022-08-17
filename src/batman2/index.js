@@ -1,16 +1,9 @@
 import React, { useEffect } from 'react';
-import useAsync from '../customHook/useAsync';
-import axios from 'axios';
-import { API_URL } from '../config/contansts.js';
 import DarknightComponent from './darknight';
 import { useSelector, useDispatch } from 'react-redux';
 import { getSecondCharacters } from '../module/characters';
 
 
-// async function getCharacters(){
-//     const response = await axios.get(`${API_URL}/second`);
-//     return response.data;
-// }
 let move = false;
 function isMoveDown(){
   move = true;
@@ -46,8 +39,6 @@ const SecondPage = () => {
           item.style.animation = `fade 500ms ${(timer += 150)}ms forwards`;
         });
       },[introText])
-    // const [state] = useAsync(getCharacters, [])
-    // const { loading, data: characters, error } = state;
     if(loading)  return <div className="spinner_bg"><div class="sk-folding-cube">
     <div class="sk-cube1 sk-cube"></div>
     <div class="sk-cube2 sk-cube"></div>

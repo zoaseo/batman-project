@@ -1,16 +1,8 @@
 import React, { useEffect }  from 'react';
-import useAsync from '../customHook/useAsync';
-import axios from 'axios';
-// import { Link } from 'react-router-dom';
-import { API_URL } from '../config/contansts.js';
 import BeginsComponent from './begins';
 import { useSelector, useDispatch } from 'react-redux';
 import { getFirstCharacters } from '../module/characters';
 
-// async function getCharacters(){
-//     const response = await axios.get(`${API_URL}/first`);
-//     return response.data;
-// }
 let move = false;
 function isMoveDown(){
   move = true;
@@ -47,8 +39,6 @@ const FirstPage = () => {
           item.style.animation = `fade 500ms ${(timer += 150)}ms forwards`;
         });
       },[introText])
-    // const [state] = useAsync(getCharacters, [])
-    // const { loading, data: characters, error } = state;
     if(loading)  return <div className="spinner_bg"><div class="sk-folding-cube">
     <div class="sk-cube1 sk-cube"></div>
     <div class="sk-cube2 sk-cube"></div>

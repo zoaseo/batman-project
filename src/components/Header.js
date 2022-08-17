@@ -1,12 +1,11 @@
 import React, { useState, useEffect } from 'react';
-import { Link, useNavigate, useParams } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import './Header.css';
 import { getCookie, removeCookie } from '../util/cookie';
 import { setLogout } from '../module/logincheck';
 import { useDispatch, useSelector } from 'react-redux';
 import axios from 'axios';
 import { API_URL } from '../config/contansts.js';
-import useAsync from '../customHook/useAsync';
 
 const Header = () => {
     const Navigate = useNavigate();
@@ -126,8 +125,6 @@ const Header = () => {
     }
     return (
         <div id="header">
-            {/* <div id="back">
-            </div> */}
             <div id="top_header">
                 <div className='inner'>
                     <div id="ham" onClick={OpenSitemap}>
@@ -221,8 +218,11 @@ const Header = () => {
                     <div id="right_footer">
                         <p>JOIN THE CONVERSATION</p>
                         <ul id='icon_flex'>
+                            {/* eslint-disable-next-line */}
                             <li><a href="#"><img src='../img/facebook.png' alt=''/></a></li>
+                            {/* eslint-disable-next-line */}
                             <li><a href="#"><img src='../img/instagram.png' alt=''/></a></li>
+                            {/* eslint-disable-next-line */}
                             <li><a href="#"><img src='../img/twitter.png' alt=''/></a></li>
                         </ul>
                     </div>

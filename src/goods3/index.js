@@ -1,8 +1,4 @@
 import React, { useEffect } from 'react';
-import useAsync from '../customHook/useAsync';
-import axios from 'axios';
-// import { Link } from 'react-router-dom';
-import { API_URL } from '../config/contansts.js';
 import Goods3Component from './goods3';
 import { useSelector, useDispatch } from 'react-redux';
 import { getThirdGoods } from '../module/goods';

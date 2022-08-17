@@ -2,10 +2,11 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { API_URL } from '../config/contansts';
 import './MyPage.css'
-import { Link, useNavigate, useParams } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import useAsync from '../customHook/useAsync';
 
 const MypageComponent = ({data}) => {
+    // eslint-disable-next-line
     const navigate = useNavigate();
     const onDelete = () => {
         if(window.confirm("정말 삭제하시겠습니까?")){
@@ -30,6 +31,7 @@ const MypageComponent = ({data}) => {
         return response.data;
     }  
     const [ state ] = useAsync(()=>getCountPrice(),[data.id]);
+        // eslint-disable-next-line
     const { loading, data:cp, error } = state;
     useEffect(()=>{
         setCount({

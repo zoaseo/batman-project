@@ -25,6 +25,7 @@ const MyPage = () => {
         return response.data;
     }  
     const [ to ] = useAsync(()=>getTotal(idid),[idid]);
+        // eslint-disable-next-line
     const { l, data: data, e } = to;
     useEffect(()=>{
         setPay({

@@ -400,3 +400,28 @@ font-family: 'Noto Sans KR', sans-serif;  한글 */
       opacity: 0; 
     }
   }
+
+@media screen and (min-width: 320px) and (max-width:479px) {
+    .titlelogo h1 {
+        font-size: 60px;
+    }
+    #whole ul {
+        width: 100%;
+        left: 55%;
+        max-width: 450px;
+    }
+    #whole ul li {
+        width: 25%;
+        margin: 2%;
+    }
+    #imgimg {
+        width: 80%;
+    } 
+    #p_title1 {
+        width: 100%;
+    }
+    #p_title2 {
+        font-size: 12px;
+        width: 100%;
+    }
+}

@@ -19,7 +19,7 @@ const Header = () => {
     // } else {
     //     console.log("화면의 너비가 768px 보다 큽니다.");
     // }
-    const isMobile = window.matchMedia("screen and (min-width: 320px) and (max-width:767px)").matches;
+    const isMobile = window.matchMedia("screen and (min-width: 320px) and (max-width:479px)").matches;
     console.log(isMobile)
     if (isMobile) {
         // mobile only code
@@ -113,6 +113,10 @@ const Header = () => {
         sear_ico2.classList.remove('do2');
         const img_flex = document.querySelector("#img_flex");
         img_flex.style.height = '600px'
+        if (isMobile) {
+            // mobile only code
+            img_flex.style.height = '550px'
+        }
     }
     function onClickSpan() {
         const sear_ico2 = document.querySelector('#sear_ico2');
@@ -169,7 +173,7 @@ const Header = () => {
                         <li>
                             <ul id='one' className="li_flex">
                                 <li>
-                                    <h2>batman begins</h2>
+                                    <h2>Batman Begins</h2>
                                     <ul id="fir_ul">
                                         <li onClick={CloseSitemap} className='fir_li'><Link to="/first">characters</Link></li>
                                         <li onClick={CloseSitemap} ><Link to="/goods1">goods</Link></li>

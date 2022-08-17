@@ -13,6 +13,18 @@ const Header = () => {
     function goHome() {
         Navigate('/');
     }
+    // var mql = window.matchMedia("screen and (max-width: 768px)");
+
+    // if (mql.matches) {
+    //     console.log("화면의 너비가 768px 보다 작습니다.");
+    // } else {
+    //     console.log("화면의 너비가 768px 보다 큽니다.");
+    // }
+    const isMobile = window.matchMedia("screen and (min-width: 320px) and (max-width:767px)").matches;
+    console.log(isMobile)
+    if (isMobile) {
+        // mobile only code
+    }
     function OpenSitemap () {
         const site_map = document.querySelector('#site_map');
         site_map.style.left = '0px';
@@ -22,6 +34,11 @@ const Header = () => {
     }
     function CloseSitemap () {
         const site_map = document.querySelector('#site_map');
+        if (isMobile) {
+            // mobile only code
+            site_map.style.left = '-100%';
+            console.log("gkgk"+isMobile)
+        }
         site_map.style.left = '-550px';
         site_map.style.zIndex = '1';
         const ham = document.querySelector('#ham');
@@ -201,7 +218,7 @@ const Header = () => {
                     </ul>
                 </div>
                 <div id="header_footer">
-                    <div>
+                    <div id="right_footer">
                         <p>JOIN THE CONVERSATION</p>
                         <ul id='icon_flex'>
                             <li><a href="#"><img src='../img/facebook.png' alt=''/></a></li>

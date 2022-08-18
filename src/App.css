@@ -485,7 +485,7 @@ font-family: 'Noto Sans KR', sans-serif;  한글 */
 
 @media screen and (min-width: 320px) and (max-width:479px) {
     .titlelogo h1 {
-        font-size: 60px;
+        font-size: 35px;
     }
     #whole ul {
         width: 100%;
@@ -493,7 +493,7 @@ font-family: 'Noto Sans KR', sans-serif;  한글 */
         max-width: 450px;
         max-height: 550px;
         height: 100%;
-        top: 15%;
+        top: 17%;
     }
     #whole ul li {
         width: 25%;

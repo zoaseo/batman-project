@@ -214,7 +214,7 @@ const MemberJoin = () => {
                     <tr>
                         <td className="join_left">아이디</td>
                         <td className="join_right">
-                            <input type="text" id="id" name="userId" value={formData.userId} onChange={onChange} />
+                            <input placeholder="영문, 숫자 8~12자 이내 입력" type="text" id="id" name="userId" value={formData.userId} onChange={onChange} />
                             <span id ="duCk"onClick={(e)=>{OnIdCh(e);}}>중복확인</span>
                         </td>
                     </tr>
@@ -240,13 +240,13 @@ const MemberJoin = () => {
                     <tr>
                         <td className="join_left">전화번호</td>
                         <td className="join_right">
-                        <input placeholder="숫자만 입력 가능합니다" id='pn' className='margin' type="text" name="phone" value={formData.phone} onChange={phoneNumber}/>
+                        <input placeholder="숫자만 입력 가능" id='pn' className='margin' type="text" name="phone" value={formData.phone} onChange={phoneNumber}/>
                         </td>
                     </tr>
                     <tr>
                         <td className="join_left">이메일</td>
                         <td className="join_right">
-                            <input placeholder="숫자나 알파벳(소/대문자)@" className='margin' type="text" name="email" id="email" value={formData.email} onChange={onChange}/>
+                            <input placeholder="숫자, 영문@aaa.com 형식" className='margin' type="text" name="email" id="email" value={formData.email} onChange={onChange}/>
                             <span id ="emailck" onClick={emailck}>형식확인</span>
                         </td>
                     </tr>

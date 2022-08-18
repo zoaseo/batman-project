@@ -97,3 +97,17 @@ input[type='radio']:checked {
     font-size: 15px;
     cursor: pointer;
 }
+
+@media screen and (min-width: 320px) and (max-width:479px) {
+    #editgoods form {
+        /* background-color: tomato; */
+        max-width: 310px;
+        width: 100%;
+        padding: 10px;
+        height: 700px;
+        display: block;
+    }
+    #editgoods form input {
+        width: 40%;
+    }
+}

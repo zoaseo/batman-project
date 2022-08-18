@@ -25,7 +25,7 @@ const MemberLogin = () => {
         e.preventDefault();
         // 인풋에 입력했는지 체크
         if(loginData.userId === '' || loginData.password === ''){
-            alert('이메일과 비밀번호를 입력해주세요');
+            alert('아이디와 비밀번호를 입력해주세요');
         }else {
             axios.post(`${API_URL}/login`, loginData)
             // 로그인이 되었을 때

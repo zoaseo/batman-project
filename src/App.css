@@ -411,6 +411,7 @@ font-family: 'Noto Sans KR', sans-serif;  한글 */
         max-width: 450px;
         max-height: 550px;
         height: 100%;
+        top: 15%;
     }
     #whole ul li {
         width: 25%;

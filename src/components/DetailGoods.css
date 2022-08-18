@@ -19,6 +19,7 @@
 #detail_goods #left_detail {
     /* opacity: 1; */
     /* background-color: aqua; */
+    z-index: -1;
     width: 450px;
     height: 600px;
     position: absolute;
@@ -101,4 +102,117 @@
     margin: 0 5px;
     width: 55px;
     height: 32px;
+}
+
+@media screen and (min-width: 320px) and (max-width:479px) {
+    #bg {
+        width: 100%;
+        height: 600px;
+        background-color: rgba(0, 0, 0, 0.5);
+        /* background-color: tomato; */
+        position: absolute;
+        top: 53%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        /* z-index: -1000; */
+    }
+    #detail_goods #left_detail {
+        /* opacity: 1; */
+        /* background-color: aqua; */
+        z-index: -1;
+        width: 40%;
+        height: 300px;
+        position: absolute;
+        top: 47%;
+        transform: translateY(-50%);
+        left: 5%;
+    }
+    
+    #detail_goods #left_detail img {
+        width: 100%;
+        height: 100%;
+        /* filter: brightness(70%); */
+        /* z-index: -1000000000; */
+        /* opacity: 0.2; */
+        /* display: none; */
+    }
+    #detail_goods #right_detail {
+        /* background-color: aqua; */
+        width: 100%;
+        height: 500px;
+        position: absolute;
+        top: 53%;
+        transform: translateY(-50%);
+        left: 0%;
+        right: 5%;
+        /* text-align: center; */
+        color: #ddd;
+        
+    }
+    #d_title1 {
+        position: absolute;
+        top: 0;
+        left: 15%;
+        width: 100%;
+        text-align: center;
+        max-width: 250px;
+        /* background-color: tomato; */
+        font-size: 20px;
+    }
+    #d_title2 {
+        /* background-color: tomato; */
+        position: absolute;
+        top: 42%;
+        max-width: 140px;
+        width: 100%;
+        left: 50%;
+    }
+    #d_title3 {
+        /* background-color: tomato; */
+        position: absolute;
+        max-width: 150px;
+        width: 100%;
+        top: 93%;
+        left: 50%;
+        font-size: 20px;
+    }
+    #gopurchace {
+        /* background-color: aqua; */
+        max-width: 300px;
+        width: 100%;
+        height: 45px;
+        position: absolute;
+        top: 78%;
+        left: 10%;
+        display: flex;
+    }
+    #purchace {
+        width: 100px;
+        height: 40px;
+        background-color: rgba(255, 255, 255, 0.5);
+        padding: 5px;
+        color: #eee;
+        font-size: 13px;
+        cursor: pointer;
+        margin-left: 30px;
+    }
+    
+    #detail_goods #btns {
+        /* background-color: tomato; */
+        width: 110px;
+        position: absolute;
+        left: 10%;
+        top: 12%;
+        z-index: 5;
+    }
+    #detail_goods #btns button {
+        background-color: rgba(255, 255, 255, 0.5);
+        padding: 3px;
+        color: #eee;
+        font-size: 13px;
+        cursor: pointer;
+        margin: 0 5px;
+        width: 45px;
+        height: 30px;
+    }
 }

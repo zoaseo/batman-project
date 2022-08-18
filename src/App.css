@@ -219,8 +219,8 @@ font-family: 'Noto Sans KR', sans-serif;  한글 */
 }
 .postCode_btn {
     position: absolute;
-    top: 12%;
-    left: 25%;
+    top: 0%;
+    left: 28%;
     width: 55px;
     background-color: rgba(255, 255, 255, 0.5);
     padding: 3px;
@@ -538,6 +538,7 @@ font-family: 'Noto Sans KR', sans-serif;  한글 */
         left: 50%;
         max-width: 80px;
         width: 100%;
+        /* background-color: tomato; */
         font-size: 11px;
     }
     #g_title2 {
@@ -556,5 +557,16 @@ font-family: 'Noto Sans KR', sans-serif;  한글 */
         left: 50%;
         width: 100%;
         font-size: 13px;
+    }
+    .postCode_btn {
+        position: absolute;
+        top: 0%;
+        left: 10%;
+        width: 55px;
+        background-color: rgba(255, 255, 255, 0.5);
+        padding: 3px;
+        color: #eee;
+        font-size: 15px;
+        cursor: pointer;
     }
 }

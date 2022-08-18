@@ -111,6 +111,7 @@ const MemberJoin = () => {
     console.log(sameCheck)
     const OnIdCh = async (e) => {
         let userId = document.querySelector('#id');
+        var regId = /^[A-Za-z0-9]{8,12}$/;  
         const response = await axios.get(`${API_URL}/idCh`);
         const Iddb = response.data;
         let sameNum = 0;
@@ -132,7 +133,11 @@ const MemberJoin = () => {
                 console.log(sameCheck)
                 console.log(userId)
                 console.log(userId.value)
-            }else {
+            }
+            else if(!regId.test(userId.value)) {
+                alert('영문과 숫자 8~12자 이내로 입력하세요.');
+            }
+            else {
                 alert('사용가능한 아이디입니다.');
                 setSameCheck(true);
             }

@@ -509,4 +509,52 @@ font-family: 'Noto Sans KR', sans-serif;  한글 */
         font-size: 12px;
         width: 100%;
     }
+    #whole2 ul {
+        width: 100%;
+        position: absolute;
+        left: 52%;
+        transform: translateX(-50%);
+        top: 15%;
+        height: 650px;
+    }
+    #whole2 ul li {
+        width: 30%;
+        height: 40%;
+        margin: 0 1%;
+    }
+    #gimg {
+        width: 80%;
+        height: 40%;
+        left: 10%;
+    }
+    #li_right {
+        position: absolute;
+        width: 100%;
+        /* background-color: aqua; */
+    }
+    #g_title1 {
+        position: absolute;
+        top: 0%;
+        left: 50%;
+        max-width: 80px;
+        width: 100%;
+        font-size: 11px;
+    }
+    #g_title2 {
+        display: none;
+    }
+    #g_title3 {
+        position: absolute;
+        font-size: 13px;
+        top: 65%;
+        left: 50%;
+        width: 100%;
+    }
+    #g_title4 {
+        position: absolute;
+        top: 80%;
+        left: 50%;
+        width: 100%;
+        font-size: 13px;
+    }
 }

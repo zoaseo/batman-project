@@ -16,12 +16,12 @@ const Goods1Page = () => {
     },[dispatch]);
     const introText = document.querySelectorAll(".titlelogo span");
     useEffect(()=>{
-        
+        console.log("안녕안녕")
         let timer = 100;
         introText.forEach((item) => {
           item.style.animation = `fade 500ms ${(timer += 150)}ms forwards`;
         });
-        console.log(introText)
+        
       },[introText])
     // const [state] = useAsync(getGoods, [])
     // const { loading, data: goods, error } = state;

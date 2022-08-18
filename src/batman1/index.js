@@ -28,13 +28,13 @@ function onMouseMove(e) {
 const FirstPage = () => {
     const { data:characters, loading, error } = useSelector(state => state.characters);
     const dispatch = useDispatch();
-    const introText = document.querySelectorAll(".titlelogo span");
-    useEffect(()=>{
-        let timer = 100;
-        introText.forEach((item) => {
-          item.style.animation = `fade 500ms ${(timer += 150)}ms forwards`;
-        });
-      },[introText])
+    // const introText = document.querySelectorAll(".titlelogo span");
+    // useEffect(()=>{
+    //     let timer = 100;
+    //     introText.forEach((item) => {
+    //       item.style.animation = `fade 500ms ${(timer += 150)}ms forwards`;
+    //     });
+    //   },[introText])
     // 컴포넌트 마운트 후 고객 목록 요청
     useEffect(()=>{
         dispatch(getFirstCharacters(dispatch));
@@ -55,19 +55,19 @@ const FirstPage = () => {
             </div>
             <div className='titlelogo'>
                 <h1>
-                    <span>B</span>
-                    <span>a</span>
-                    <span>t</span>
-                    <span>m</span>
-                    <span>a</span>
-                    <span>n</span>
-                    <span> </span>
-                    <span>B</span>
-                    <span>e</span>
-                    <span>g</span>
-                    <span>i</span>
-                    <span>n</span>
-                    <span>s</span>
+                    <span className='logo1'>B</span>
+                    <span className='logo2'>a</span>
+                    <span className='logo3'>t</span>
+                    <span className='logo4'>m</span>
+                    <span className='logo5'>a</span>
+                    <span className='logo6'>n</span>
+                    <span className='logo7'> </span>
+                    <span className='logo8'>B</span>
+                    <span className='logo9'>e</span>
+                    <span className='logo10'>g</span>
+                    <span className='logo11'>i</span>
+                    <span className='logo12'>n</span>
+                    <span className='logo13'>s</span>
                 </h1>
             </div>
             <div id="whole" className='www' onMouseUp={isMoveUp} onMouseDown={isMoveDown} onMouseMove={onMouseMove}>

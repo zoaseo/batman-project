@@ -25,11 +25,11 @@ const Goods1Page = () => {
     //   },[introText])
     // const [state] = useAsync(getGoods, [])
     // const { loading, data: goods, error } = state;
-    if(loading)  return <div className="spinner_bg"><div class="sk-folding-cube">
-    <div class="sk-cube1 sk-cube"></div>
-    <div class="sk-cube2 sk-cube"></div>
-    <div class="sk-cube4 sk-cube"></div>
-    <div class="sk-cube3 sk-cube"></div>
+    if(loading)  return <div className="spinner_bg"><div className="sk-folding-cube">
+    <div className="sk-cube1 sk-cube"></div>
+    <div className="sk-cube2 sk-cube"></div>
+    <div className="sk-cube4 sk-cube"></div>
+    <div className="sk-cube3 sk-cube"></div>
   </div></div>
     if(error) return <div>에러가 발생했습니다.</div>
     if(!goods) return <div>로딩중입니다.</div>
@@ -39,19 +39,19 @@ const Goods1Page = () => {
             </div>
             <div className='titlelogo'>
                 <h1>
-                    <span>B</span>
-                    <span>a</span>
-                    <span>t</span>
-                    <span>m</span>
-                    <span>a</span>
-                    <span>n</span>
-                    <span> </span>
-                    <span>B</span>
-                    <span>e</span>
-                    <span>g</span>
-                    <span>i</span>
-                    <span>n</span>
-                    <span>s</span>
+                    <span className='logo1'>B</span>
+                    <span className='logo2'>a</span>
+                    <span className='logo3'>t</span>
+                    <span className='logo4'>m</span>
+                    <span className='logo5'>a</span>
+                    <span className='logo6'>n</span>
+                    <span className='logo7'> </span>
+                    <span className='logo8'>B</span>
+                    <span className='logo9'>e</span>
+                    <span className='logo10'>g</span>
+                    <span className='logo11'>i</span>
+                    <span className='logo12'>n</span>
+                    <span className='logo13'>s</span>
                 </h1>
             </div>
             <div id="whole2">

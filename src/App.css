@@ -250,7 +250,9 @@ font-family: 'Noto Sans KR', sans-serif;  한글 */
 }
 .titlelogo span {
     opacity: 0;
+    animation: fade 0.5s infinite;
 }
+
 @keyframes fade {
     to {
         opacity: 1;

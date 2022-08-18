@@ -14,15 +14,15 @@ const Goods1Page = () => {
     useEffect(()=>{
         dispatch(getFirstGoods(dispatch));
     },[dispatch]);
-    const introText = document.querySelectorAll(".titlelogo span");
-    useEffect(()=>{
-        console.log("안녕안녕")
-        let timer = 100;
-        introText.forEach((item) => {
-          item.style.animation = `fade 500ms ${(timer += 150)}ms forwards`;
-        });
+    // let introText = document.querySelectorAll(".titlelogo span");
+    // useEffect(()=>{
+    //     console.log("안녕안녕");
+    //     let timer = 100;
+    //     introText.forEach((item) => {
+    //       item.style.animation = `fade 500ms ${(timer += 150)}ms forwards`;
+    //     });
         
-      },[introText])
+    //   },[introText])
     // const [state] = useAsync(getGoods, [])
     // const { loading, data: goods, error } = state;
     if(loading)  return <div className="spinner_bg"><div class="sk-folding-cube">

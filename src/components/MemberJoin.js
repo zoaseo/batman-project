@@ -242,15 +242,15 @@ const MemberJoin = () => {
                     <tr>
                         <td className="join_left">아이디</td>
                         <td className="join_right">
-                            <input placeholder="영문, 숫자 8~12자 이내 입력" type="text" id="id" name="userId" value={formData.userId} onChange={onChange} />
-                            <span id ="duCk"onClick={(e)=>{OnIdCh(e);}}>중복확인</span>
+                            <input placeholder="영문, 숫자 조합 8-12자리 입력" type="text" id="id" name="userId" value={formData.userId} onChange={onChange} />
+                            <span id ="duCk" onClick={(e)=>{OnIdCh(e);}}>중복확인</span>
                         </td>
                     </tr>
                     <tr>
                         <td className="join_left">비밀번호</td>
                         <td className="join_right">
-                        <input type="password" id="password" name="password" value={formData.password} onChange={onChange}/>
-                        <span id ="duCk"onClick={(e)=>{OnPsCh(e);}}>형식확인</span>
+                        <input placeholder="영문, 숫자 조합 8-20자리 입력" type="password" id="password" name="password" value={formData.password} onChange={onChange}/>
+                        <span id ="duCk" onClick={(e)=>{OnPsCh(e);}}>형식확인</span>
                         </td>
                     </tr>
                     <tr>

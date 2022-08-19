@@ -48,37 +48,45 @@ const MemberJoin = () => {
         const userPwCh = document.querySelector('#passwordCk');
         if(window.confirm("등록하시겠습니까?")){
             e.preventDefault();
-            if(userPw.value !== userPwCh.value) {
-                alert('비밀번호가 일치하지 않습니다.');
+            var text = document.querySelector('#password').value;
+            console.log(text);
+                // eslint-disable-next-line
+            let regPass = /^(?=.*[a-zA-Z])(?=.*[0-9]).{8,25}$/;
+            if (regPass.test(text) === false) {
+                alert('비밀번호 형식이 아닙니다.')
             }else {
-                // if(isNaN(formData.phone)){
-                //     alert("전화번호는 숫자만 입력해주세요");
-                //     setFormData({
-                //         ...formData,
-                //         phone: "",
-                //     })
-                // }
-                // input에 값이 있는지 체크하고
-                // 입력이 다되어있으면 post전송
-                if(formData.userId !== "" && formData.password !== "" &&
-                formData.userName !== "" && formData.phone !== "" &&
-                formData.email !== "" && formData.address !== "" && 
-                formData.adddetail !== ""){
-                    console.log(sameCheck)
-                    if(sameCheck && emailCheck && passCheck){
-                        addMember();
-                    }else if(!sameCheck) {
-                        alert('아이디 중복확인을 해주세요')
-                    }else if(!emailCheck) {
-                        alert('이메일 형식확인을 해주세요')
-                    }else if(!passCheck) {
-                        alert('비밀번호 형식확인을 해주세요')
+                setPassCheck(true);
+                if(userPw.value !== userPwCh.value) {
+                    alert('비밀번호가 일치하지 않습니다.');
+                }else {
+                    // if(isNaN(formData.phone)){
+                    //     alert("전화번호는 숫자만 입력해주세요");
+                    //     setFormData({
+                    //         ...formData,
+                    //         phone: "",
+                    //     })
+                    // }
+                    // input에 값이 있는지 체크하고
+                    // 입력이 다되어있으면 post전송
+                    if(formData.userId !== "" && formData.password !== "" &&
+                    formData.userName !== "" && formData.phone !== "" &&
+                    formData.email !== "" && formData.address !== "" && 
+                    formData.adddetail !== ""){
+                        console.log(sameCheck)
+                        if(sameCheck && emailCheck){
+                            addMember();
+                        }else if(!sameCheck) {
+                            alert('아이디 중복확인을 해주세요')
+                        }else if(!emailCheck) {
+                            alert('이메일 형식확인을 해주세요')
+                        }
+                    }
+                    else {
+                        alert("모든 기입란에 기입해주세요");
                     }
                 }
-                else {
-                    alert("모든 기입란에 기입해주세요");
-                }
             }
+
         }else{
             alert("등록이 취소되었습니다");
         }
@@ -147,18 +155,6 @@ const MemberJoin = () => {
         
     }
     const [ passCheck, setPassCheck ] = useState(false);
-    const OnPsCh = () => {
-        var text = document.querySelector('#password').value;
-        console.log(text);
-            // eslint-disable-next-line
-        let regPass = /^(?=.*[a-zA-Z])(?=.*[0-9]).{8,25}$/;
-        if (regPass.test(text) === true) {
-            alert('비밀번호 형식입니다.');
-            setPassCheck(true);
-        }else {
-            alert('비밀번호 형식이 아닙니다.')
-        }
-    }
     const [ emailCheck, setEmailCheck ] = useState(false);
     function emailck() {
         var text = document.querySelector('#email').value;
@@ -249,8 +245,7 @@ const MemberJoin = () => {
                     <tr>
                         <td className="join_left">비밀번호</td>
                         <td className="join_right">
-                        <input placeholder="영문, 숫자 조합 8-20자리 입력" type="password" id="password" name="password" value={formData.password} onChange={onChange}/>
-                        <span id ="duCk" onClick={(e)=>{OnPsCh(e);}}>형식확인</span>
+                        <input className='margin' placeholder="영문, 숫자 조합 8-20자리 입력" type="password" id="password" name="password" value={formData.password} onChange={onChange}/>
                         </td>
                     </tr>
                     <tr>

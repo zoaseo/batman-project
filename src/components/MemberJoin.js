@@ -65,12 +65,14 @@ const MemberJoin = () => {
                 formData.email !== "" && formData.address !== "" && 
                 formData.adddetail !== ""){
                     console.log(sameCheck)
-                    if(sameCheck && emailCheck){
+                    if(sameCheck && emailCheck && passCheck){
                         addMember();
                     }else if(!sameCheck) {
                         alert('아이디 중복확인을 해주세요')
                     }else if(!emailCheck) {
                         alert('이메일 형식확인을 해주세요')
+                    }else if(!passCheck) {
+                        alert('비밀번호 형식확인을 해주세요')
                     }
                 }
                 else {
@@ -108,7 +110,7 @@ const MemberJoin = () => {
         })
     }
     const [ sameCheck, setSameCheck ] = useState(false);
-    console.log(sameCheck)
+    // console.log(sameCheck)
     const OnIdCh = async (e) => {
         let userId = document.querySelector('#id');
         var regId = /^[A-Za-z0-9]{8,12}$/;  
@@ -144,6 +146,19 @@ const MemberJoin = () => {
         }
         
     }
+    const [ passCheck, setPassCheck ] = useState(false);
+    const OnPsCh = () => {
+        var text = document.querySelector('#password').value;
+        console.log(text);
+            // eslint-disable-next-line
+        let regPass = /^(?=.*[a-zA-Z])(?=.*[0-9]).{8,25}$/;
+        if (regPass.test(text) === true) {
+            alert('비밀번호 형식입니다.');
+            setPassCheck(true);
+        }else {
+            alert('비밀번호 형식이 아닙니다.')
+        }
+    }
     const [ emailCheck, setEmailCheck ] = useState(false);
     function emailck() {
         var text = document.querySelector('#email').value;
@@ -157,6 +172,18 @@ const MemberJoin = () => {
             alert('이메일 형식이 아닙니다.')
         }
     }
+    // function password(e) {
+    //     var { name, value } = e.target;
+    //     let regPass = /^(?=.*[a-zA-Z])(?=.*[0-9]).{8,25}$/;
+    //     if(!regPass.test(value)) alert("영문, 숫자 조합으로 8-20자리 입력해주세요.")
+    //     else {
+    //         setFormData({
+    //             ...formData,
+    //             [name]:value
+    //         })
+    //         return value;
+    //     }
+    // }
     function phoneNumber(e) {
         var { name, value } = e.target;
         // if (!value) {
@@ -199,6 +226,7 @@ const MemberJoin = () => {
         })
         return value;
       }
+      console.log("비번"+passCheck)
     return (
         <div id="memberJoin">
         <div id="back">
@@ -221,7 +249,8 @@ const MemberJoin = () => {
                     <tr>
                         <td className="join_left">비밀번호</td>
                         <td className="join_right">
-                        <input className='margin' type="password" id="password" name="password" value={formData.password} onChange={onChange}/>
+                        <input type="password" id="password" name="password" value={formData.password} onChange={onChange}/>
+                        <span id ="duCk"onClick={(e)=>{OnPsCh(e);}}>형식확인</span>
                         </td>
                     </tr>
                     <tr>

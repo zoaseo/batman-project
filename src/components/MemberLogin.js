@@ -21,6 +21,15 @@ const MemberLogin = () => {
             [name]:value
         })
     }
+    const Login = async () => {
+        let userId = document.querySelector('#userId');
+        const response = await axios.get(`${API_URL}/getId/${userId.value}`);
+        const getId = response.data;
+        console.log(getId);
+        if(getId.length <= 0) {
+            alert("등록된 아이디가 없습니다.");
+        } 
+    }
     const onSubmit = (e) => {
         e.preventDefault();
         // 인풋에 입력했는지 체크
@@ -81,7 +90,7 @@ const MemberLogin = () => {
                     </tr>
                     <tr>
                         <td colSpan={2} id="btns">
-                            <button type="submit">로그인</button>
+                            <button onClick={Login} type="submit">로그인</button>
                             <Link to='/join'><button>회원가입</button></Link>
                         </td>
                     </tr>

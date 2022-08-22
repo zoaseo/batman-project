@@ -22,7 +22,7 @@ const MemberLogin = () => {
         })
     }
     const Login = async () => {
-        let userId = document.querySelector('#userId');
+        let userId = document.querySelector('#userID');
         const response = await axios.get(`${API_URL}/getId/${userId.value}`);
         const getId = response.data;
         console.log(getId);

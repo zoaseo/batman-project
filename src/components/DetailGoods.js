@@ -107,8 +107,8 @@ const DetailGoods = () => {
             </div>
             <div id="bg"></div>
             <div id='btns'>
-            {uid === 'admin' ?  <button><Link to={`/editgoods/${id}`}>수정</Link></button> : ''} 
-            {uid === 'admin' ?  <button onClick={onDelete}>삭제</button> : ''} 
+            {uid === 'admin123' ?  <button><Link to={`/editgoods/${id}`}>수정</Link></button> : ''} 
+            {uid === 'admin123' ?  <button onClick={onDelete}>삭제</button> : ''} 
             </div>
             <div id="left_detail">
                 <div id="detail_img"><img src={`../img/${goods.proimgsrc}`} alt="goodsimg" /></div>

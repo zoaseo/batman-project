@@ -138,8 +138,8 @@ const Header = () => {
                     <div><h1><Link to="/">BATMAN</Link></h1></div>
                     <div>
                         <ul id="fff">
-                            {uname === 'admin' ? <li><Link to="/insert">insert</Link></li> : ''}
-                            {isLogin === false ? <li><Link to="/login">login</Link></li> : <>{ uname === 'admin' ? <><li>{uname}</li><li id="pointer" onClick={()=>{goHome(); logoutClick();}}>logout</li></> : <><li>welcome {uname}</li><li id="pointer" onClick={()=>{goHome(); logoutClick();}}>logout</li></>}</>}
+                            {uname === 'admin123' ? <li><Link to="/insert">insert</Link></li> : ''}
+                            {isLogin === false ? <li><Link to="/login">login</Link></li> : <>{ uname === 'admin123' ? <><li>{uname}</li><li id="pointer" onClick={()=>{goHome(); logoutClick();}}>logout</li></> : <><li>welcome {uname}</li><li id="pointer" onClick={()=>{goHome(); logoutClick();}}>logout</li></>}</>}
                             {isLogin === false ? <li><Link to="/join">join</Link></li> : ''}    
                             {isLogin === false ? '' :  <li><Link to={`/mypage/${uid}`}>mypage</Link></li>}
                         </ul>

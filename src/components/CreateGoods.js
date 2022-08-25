@@ -93,7 +93,7 @@ const CreateGoods = () => {
                             </th>
                         </tr>
                         <tr>
-                            <td>Image</td>
+                            <td>image</td>
                             <td id='imgimgimg'>
                                 <div id="editimg">
                                     {

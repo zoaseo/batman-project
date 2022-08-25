@@ -123,7 +123,7 @@ const EditGoods = () => {
                             </th>
                         </tr>
                         <tr>
-                            <td>이미지등록</td>
+                            <td>image</td>
                             <td id='imgimgimg'>
                                 <div id="editimg">
                                 <img src={`${API_URL}/upload/${formData.c_proimgsrc}`} alt="imgimg"/>
@@ -136,25 +136,25 @@ const EditGoods = () => {
                             </td>
                         </tr>
                         <tr>
-                            <td>제품명</td>
+                            <td>name</td>
                             <td>
                                 <input name="c_proname" type="text" value={formData.c_proname} onChange={onChange}/>
                             </td>
                         </tr>
                         <tr>
-                            <td>제품설명</td>
+                            <td>description</td>
                             <td>
                             <input name="c_prodescript" type="text" value={formData.c_prodescript} onChange={onChange}/>
                             </td>
                         </tr>
                         <tr>
-                            <td>가격</td>
+                            <td>price</td>
                             <td>
                                 <input name="c_price" type="text" value={formData.c_price} onChange={onChange}/>
                             </td>
                         </tr>
                         <tr>
-                            <td id='radiostyle'>시리즈</td>
+                            <td id='radiostyle'>series</td>
                                 <p className='radios'>
                                 Batman Begins
                                 <input name="c_part" type="radio" value="1" onChange={onChange} 
@@ -173,8 +173,8 @@ const EditGoods = () => {
                         </tr>
                         <tr>
                             <td colSpan={2} id="btns">
-                                <button type="submit">등록</button>
-                                <button type="reset">취소</button>   
+                                <button type="submit">submit</button>
+                                <button type="reset">deny</button>   
                             </td> 
                         </tr>   
                     </tbody>   

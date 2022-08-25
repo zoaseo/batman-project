@@ -1,7 +1,7 @@
 import React from 'react';
 import axios from 'axios';
 import useAsync from '../customHook/useAsync';
-import { useParams, useNavigate } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import { API_URL } from '../config/contansts';
 import './DetailCharacter.css';
 
@@ -12,26 +12,9 @@ async function getCharacters(id){
 
 const DetailCharacter = () => {
     const { id } = useParams();
-    const navigate = useNavigate();
+    // const navigate = useNavigate();
     const [ state ] = useAsync(()=>getCharacters(id),[id]);
     const { loading, data:character, error } = state;
-
-    // 캐릭터 삭제
-    const onDelete = () => {
-        if(window.confirm("정말 삭제하시겠습니까?")){
-            axios.delete(`${API_URL}/delCharacter/${id}`)
-            .then(result=>{
-                console.log("삭제되었습니다.");
-                navigate("/"); // 리다이렉션 추가
-            })
-            .catch(e=>{
-                console.log(e);
-            })
-        }else{
-            alert("삭제가 취소되었습니다");
-        }
-
-    }
 
     if(loading)  return <div className="spinner_bg"><div className="sk-folding-cube">
     <div className="sk-cube1 sk-cube"></div>
@@ -46,10 +29,6 @@ const DetailCharacter = () => {
             <div id="back">
             </div>
             <div id="detail_character">
-                <div id='btns'>
-                    <button>수정</button>
-                    <button onClick={onDelete}>삭제</button>
-                </div>
                 <div id="left_detail">
                     <span id="span_actor">{character.actor}</span>
                     <div id="span_role">{character.role}</div>

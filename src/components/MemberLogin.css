@@ -1,7 +1,7 @@
 #loginform {
-    background-color: rgba(1, 1, 1, 0.5);
-    width: 700px;
-    height: 500px;
+    background-color: rgba(1, 1, 1, 0.1);
+    width: 500px;
+    height: 380px;
     position: absolute;
     left: 50%;
     top: 50%;
@@ -15,28 +15,52 @@ table {
     width: 100%;
 }
 .login_left {
-    text-align: right;
-    width: 25%
+    /* text-align: right; */
+    text-align: left;
+    width: 10%
 }
 .login_right {
-    width: 75%;
+    /* width: 50%; */
 }
 #loginth {
     padding: 0;
 }
 #loginform tr {
-    height: 100px;
+    height: 60px;
+    /* background-color: antiquewhite; */
 }
 #memberLogin input {
     font-size: 18px;
+    padding-left: 7px;
+    outline: none;
+    /* border: none; */
+    width: 280px;
 }
-#memberLogin #btns button {
-    background-color: rgba(255, 255, 255, 0.5);
+#memberLogin .btns {
+    text-align: right;
+    padding-bottom: 60px;
+}
+#memberLogin .btns button {
+    /* background-color: rgba(255, 255, 255, 0.5); */
+    background-color: transparent;
     margin: 0 12px;
     padding: 5px 15px;
-    color: #eee;
-    font-size: 15px;
+    color: #ccc;
+    font-size: 60px;
     cursor: pointer;
+    font-family: 'Caveat', cursive;
+    font-weight: 400;
+    outline: none;
+    border: none;
+}
+#memberLogin #go_center {
+    text-align: center;
+    padding-top: 60px;
+}
+.or_td {
+    font-family: 'Caveat', cursive;
+    font-size: 28px;
+    font-weight: 400;
 }
 @media screen and (min-width: 320px) and (max-width:479px) {
     #loginform {
@@ -58,5 +82,8 @@ table {
     }
     .login_left {
         font-size: 15px;
+        text-align: right;
+        /* text-align: center; */
+        padding-left: 10%;
     }
 }

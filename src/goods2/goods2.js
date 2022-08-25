@@ -2,6 +2,7 @@ import Aos from 'aos';
 import React, { useEffect } from 'react';
 import '../components/aos.css';
 import { Link } from 'react-router-dom';
+import { API_URL } from '../config/contansts';
 
 const Goods2Component = ({ goods }) => {
     useEffect(()=> {
@@ -12,7 +13,7 @@ const Goods2Component = ({ goods }) => {
     return (
         <li data-aos="fade-up" className="GContent">
             <div>
-                <div id="gimg"><img src={`img/${goods.proimgsrc}`} alt="actor"/></div>
+                <div id="gimg"><img src={`${API_URL}/upload/${goods.proimgsrc}`} alt="actor"/></div>
             </div>
             <div id="li_right">
                 <p id='g_title1' className='tt'>{goods.proname}</p>

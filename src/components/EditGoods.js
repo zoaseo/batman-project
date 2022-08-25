@@ -119,14 +119,14 @@ const EditGoods = () => {
                     <tbody>
                         <tr id='gone'>
                             <th colSpan={2}>
-                                굿즈 정보 수정하기
+                                Edit Goods
                             </th>
                         </tr>
                         <tr>
                             <td>이미지등록</td>
                             <td id='imgimgimg'>
                                 <div id="editimg">
-                                <img src={`../img/${formData.c_proimgsrc}`} alt="imgimg"/>
+                                <img src={`${API_URL}/upload/${formData.c_proimgsrc}`} alt="imgimg"/>
                                 </div>
                                 <span id="qqq">    
                                     <span id='fakebox' className='ff'>파일 선택 </span> 

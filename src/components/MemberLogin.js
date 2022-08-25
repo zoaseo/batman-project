@@ -22,13 +22,13 @@ const MemberLogin = () => {
         })
     }
     const Login = async () => {
-        let userId = document.querySelector('#userID');
+        let userId = document.querySelector('#userId');
         const response = await axios.get(`${API_URL}/getId/${userId.value}`);
         const getId = response.data;
         console.log(getId);
         if(getId.length <= 0) {
             alert("등록된 아이디가 없습니다.");
-        } 
+        }
     }
     const onSubmit = (e) => {
         e.preventDefault();
@@ -63,7 +63,6 @@ const MemberLogin = () => {
         }
     }
 
-
     return (
     <div id="memberLogin">
         <div id="back">
@@ -71,27 +70,36 @@ const MemberLogin = () => {
         <form onSubmit={onSubmit} id="loginform">
             <table>
                 <tbody>
-                    <tr>
+                    {/* <tr>
                         <th id="loginth" colSpan={2}>
-                            로그인
+                            Login
                         </th>
-                    </tr>
+                    </tr> */}
                     <tr>
-                        <td className='login_left'>아이디</td>
+                        <td className='login_left'>ID</td>
                         <td className='login_right'>
-                            <input type="text" id="userID" value={loginData.userId} onChange={onChange} name="userId"/>
+                            <input type="text" id="userId" value={loginData.userId} onChange={onChange} name="userId"/>
                         </td>
                     </tr>
                     <tr>
-                        <td className='login_left'>비밀번호</td>
+                        <td className='login_left'>PASSWORD</td>
                         <td className='login_right'>
                         <input type="password" id="userPW" value={loginData.password} onChange={onChange} name="password"/>
                         </td>
                     </tr>
                     <tr>
-                        <td colSpan={2} id="btns">
-                            <button onClick={Login} type="submit">로그인</button>
-                            <Link to='/join'><button>회원가입</button></Link>
+                        <td colSpan={2} className="btns">
+                            <button onClick={Login} type="submit">login</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colSpan={2} className='or_td'>
+                            or
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colSpan={2} id='go_center' className="btns">
+                            <Link to='/join'><button>Join</button></Link>
                         </td>
                     </tr>
                 </tbody>

@@ -1,5 +1,6 @@
 #back {
-    background: url('/public/img/bat.png') center center/100% no-repeat;
+    /* background: url('/public/img/bat.png') center center/100% no-repeat; */
+    background: url('/public/img/bat2.jpg') center center/100% no-repeat;
     width: 100%;
     height: 100vh;
     object-fit: contain;
@@ -65,20 +66,45 @@
     font-size: 25px;
 }
 #go {
-    left: -10%;       
+    left: -10%;      
 }
 #go2 {
-    left: 110%;       
+    left: 110%;      
 }
 #go3 {
     left: 50%;    
-    top: -30%;   
+    top: -30%;  
 }
 #logologo {
     font-family: 'Mouse Memoirs', sans-serif;
     letter-spacing: 5px;
 }
+.rain_gif {
+    display: flex;
 
+}
+.rain_gif li {
+    width: 400px;
+    height: 100vh;
+    opacity: 0.4;
+}
+.rain_gif img {
+    width: 100%;
+    height: 100%;
+}
+.real_bat {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50% ,-50%);
+    animation: shya 6s 0.1s forwards;
+    opacity: 0;
+}
+@keyframes shya {
+    100% {
+        opacity: 0.4;
+    }
+}
 @media screen and (min-width: 320px) and (max-width:479px) {
     #back {
         background-image: url('/public/img/bat.png');
@@ -89,5 +115,11 @@
         position: absolute;
         z-index: -1;
         filter: brightness(60%);
+    }
+    .real_bat {
+        display: none;
+    }
+    .rain_gif {
+        display: none;
     }
 }

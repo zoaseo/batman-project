@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Benne&family=BhuTuka+Expanded+One&family=Cinzel:wght@800&family=Montserrat+Alternates:ital,wght@1,700&family=Montserrat:wght@300&family=Mouse+Memoirs&family=Noto+Sans+KR&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Benne&family=BhuTuka+Expanded+One&family=Cinzel:wght@800&family=Montserrat+Alternates:ital,wght@1,700&family=Montserrat:wght@300&family=Mouse+Memoirs&family=Noto+Sans+KR&family=Caveat:wght@400;500&display=swap');
 * { padding: 0; margin: 0; box-sizing: border-box; scroll-behavior: smooth;}
 li { list-style: none; }
 a { text-decoration: none; color: inherit;}
@@ -8,6 +8,9 @@ html, body {
     overflow-x: hidden;
     width: 100%;
     height: 100%;
+}
+input {
+    padding-left: 5px;
 }
 #root {
     /* height: 100vh; */
@@ -402,7 +405,7 @@ font-family: 'Noto Sans KR', sans-serif;  한글 */
     -webkit-transform: rotateZ(45deg);
             transform: rotateZ(45deg);
   }
-  
+ 
   .sk-folding-cube .sk-cube {
     float: left;
     width: 50%;
@@ -410,7 +413,7 @@ font-family: 'Noto Sans KR', sans-serif;  한글 */
     position: relative;
     -webkit-transform: scale(1.1);
         -ms-transform: scale(1.1);
-            transform: scale(1.1); 
+            transform: scale(1.1);
   }
   .sk-folding-cube .sk-cube:before {
     content: '';
@@ -445,7 +448,7 @@ font-family: 'Noto Sans KR', sans-serif;  한글 */
   }
   .sk-folding-cube .sk-cube3:before {
     -webkit-animation-delay: 0.6s;
-            animation-delay: 0.6s; 
+            animation-delay: 0.6s;
   }
   .sk-folding-cube .sk-cube4:before {
     -webkit-animation-delay: 0.9s;
@@ -455,31 +458,31 @@ font-family: 'Noto Sans KR', sans-serif;  한글 */
     0%, 10% {
       -webkit-transform: perspective(140px) rotateX(-180deg);
               transform: perspective(140px) rotateX(-180deg);
-      opacity: 0; 
+      opacity: 0;
     } 25%, 75% {
       -webkit-transform: perspective(140px) rotateX(0deg);
               transform: perspective(140px) rotateX(0deg);
-      opacity: 1; 
+      opacity: 1;
     } 90%, 100% {
       -webkit-transform: perspective(140px) rotateY(180deg);
               transform: perspective(140px) rotateY(180deg);
-      opacity: 0; 
-    } 
+      opacity: 0;
+    }
   }
-  
+ 
   @keyframes sk-foldCubeAngle {
     0%, 10% {
       -webkit-transform: perspective(140px) rotateX(-180deg);
               transform: perspective(140px) rotateX(-180deg);
-      opacity: 0; 
+      opacity: 0;
     } 25%, 75% {
       -webkit-transform: perspective(140px) rotateX(0deg);
               transform: perspective(140px) rotateX(0deg);
-      opacity: 1; 
+      opacity: 1;
     } 90%, 100% {
       -webkit-transform: perspective(140px) rotateY(180deg);
               transform: perspective(140px) rotateY(180deg);
-      opacity: 0; 
+      opacity: 0;
     }
   }
 
@@ -501,7 +504,7 @@ font-family: 'Noto Sans KR', sans-serif;  한글 */
     }
     #imgimg {
         width: 80%;
-    } 
+    }
     #p_title1 {
         width: 100%;
     }

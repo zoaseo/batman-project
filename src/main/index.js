@@ -57,6 +57,18 @@ const Mainpage = () => {
         <div id='wrap'>
             <div id="back">
             </div>
+            <div className='real_bat'><img src='/img/realbat.png' alt='real'/></div>
+            <ul className='rain_gif'>
+                <li><img src ='/img/rain.gif' alt='rain'/></li>
+                <li><img src ='/img/rain.gif' alt='rain'/></li>
+                <li><img src ='/img/rain.gif' alt='rain'/></li>
+                <li><img src ='/img/rain.gif' alt='rain'/></li>
+                <li><img src ='/img/rain.gif' alt='rain'/></li>
+                <li><img src ='/img/rain.gif' alt='rain'/></li>
+                <li><img src ='/img/rain.gif' alt='rain'/></li>
+                <li><img src ='/img/rain.gif' alt='rain'/></li>
+                <li><img src ='/img/rain.gif' alt='rain'/></li>
+            </ul>
             {/* <div id="choice">
                 <button id="go" className='gostyle'>
                     <span><Link to="/first">click</Link></span>

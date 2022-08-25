@@ -8,7 +8,7 @@
 #bg {
     width: 1200px;
     height: 700px;
-    background-color: rgba(0, 0, 0, 0.5);
+    /* background-color: rgba(0, 0, 0, 0.5); */
     /* background-color: tomato; */
     position: absolute;
     top: 53%;
@@ -31,7 +31,7 @@
 #detail_goods #left_detail img {
     width: 100%;
     height: 100%;
-    /* filter: brightness(180%); */
+    /* filter: brightness(70%); */
     /* z-index: -1000000000; */
     /* opacity: 0.2; */
     /* display: none; */
@@ -47,7 +47,7 @@
     left: 50%;
     /* text-align: center; */
     color: #ddd;
-    
+   
 }
 #d_title1 {
     position: absolute;
@@ -103,6 +103,23 @@
     width: 55px;
     height: 32px;
 }
+#detailgoods_img {
+    width: 100%;
+    height: 100%;
+    /* background-color: tomato; */
+    animation: sha2 4s 0.3s forwards;
+    opacity: 0;
+}
+@keyframes sha2 {
+    100% {
+        opacity: 1;
+    }
+}
+#detailgoods_img img {
+    width: 100%;
+    height: 100%;
+    /* filter: blur(100%); */
+}
 
 @media screen and (min-width: 320px) and (max-width:479px) {
     #bg {
@@ -117,26 +134,26 @@
         /* z-index: -1000; */
     }
     #detail_goods #left_detail {
-        /* opacity: 1; */
         /* background-color: aqua; */
         z-index: -1;
         width: 40%;
+        /* width: 100%; */
         height: 300px;
         position: absolute;
         top: 47%;
         transform: translateY(-50%);
         left: 5%;
     }
-    
     #detail_goods #left_detail img {
         width: 100%;
         height: 100%;
         /* filter: brightness(70%); */
-        /* z-index: -1000000000; */
+        /* z-index: 1000; */
         /* opacity: 0.2; */
         /* display: none; */
     }
     #detail_goods #right_detail {
+        /* display: none; */
         /* background-color: aqua; */
         width: 100%;
         height: 500px;
@@ -147,7 +164,7 @@
         right: 5%;
         /* text-align: center; */
         color: #ddd;
-        
+       
     }
     #d_title1 {
         position: absolute;
@@ -196,7 +213,7 @@
         cursor: pointer;
         margin-left: 30px;
     }
-    
+   
     #detail_goods #btns {
         /* background-color: tomato; */
         width: 110px;

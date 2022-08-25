@@ -107,19 +107,19 @@ const DetailGoods = () => {
             </div>
             <div id="bg"></div>
             <div id='btns'>
-            {uid === 'admin123' ?  <button><Link to={`/editgoods/${id}`}>수정</Link></button> : ''} 
-            {uid === 'admin123' ?  <button onClick={onDelete}>삭제</button> : ''} 
+            {uid === 'admin123' ?  <button><Link to={`/editgoods/${id}`}>modify</Link></button> : ''} 
+            {uid === 'admin123' ?  <button onClick={onDelete}>delete</button> : ''} 
             </div>
             <div id="left_detail">
-                <div id="detail_img"><img src={`../img/${goods.proimgsrc}`} alt="goodsimg" /></div>
+                <div id="detailgoods_img"><img src={`${API_URL}/upload/${goods.proimgsrc}`} alt="goodsimg" /></div>
             </div>
             <div id="right_detail">
                 <p id="d_title1">{goods.proname}</p>
                 <p id="d_title2">{goods.prodescript}</p>
-                <p id="d_title3">가격: {Number(goods.price)*number}원</p>
+                <p id="d_title3">price: ￦{goods.price}</p>
                 <div id="gopurchace">
                     <CounterContainer />
-                    <button id="purchace" onClick={addReserve}>장바구니 담기</button>
+                    <button id="purchace" onClick={addReserve}>put</button>
                 </div>
             </div>
         </div>

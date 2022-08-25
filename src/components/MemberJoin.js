@@ -230,56 +230,56 @@ const MemberJoin = () => {
         <form id="joinform" onSubmit={onSubmit}>
             <table>
                 <tbody>
-                    <tr>
+                    {/* <tr>
                         <th colSpan={2}>
                             회원가입
                         </th>
-                    </tr>
+                    </tr> */}
                     <tr>
-                        <td className="join_left">아이디</td>
+                        <td className="join_left">ID</td>
                         <td className="join_right">
                             <input placeholder="영문, 숫자 조합 8-12자리 입력" type="text" id="id" name="userId" value={formData.userId} onChange={onChange} />
-                            <span id ="duCk" onClick={(e)=>{OnIdCh(e);}}>중복확인</span>
+                            <span id ="duCk" onClick={(e)=>{OnIdCh(e);}}>CHECK</span>
                         </td>
                     </tr>
                     <tr>
-                        <td className="join_left">비밀번호</td>
+                        <td className="join_left">PASSWORD</td>
                         <td className="join_right">
                         <input className='margin' placeholder="영문, 숫자 조합 8-20자리 입력" type="password" id="password" name="password" value={formData.password} onChange={onChange}/>
                         </td>
                     </tr>
                     <tr>
-                        <td className="join_left">비밀번호 확인</td>
+                        <td className="join_left">PASSWORD CHECK</td>
                         <td className="join_right">
                         <input className='margin' type="password"  id="passwordCk" name="passwordCk" value={formData.passwordCk} onChange={(e)=>{onChange(e); OnPwCh(e);}}/>
                         <p id="passInform"></p>
                         </td>
                     </tr>
                     <tr>
-                        <td className="join_left">이름</td>
+                        <td className="join_left">NAME</td>
                         <td className="join_right">
                         <input className='margin' type="text" name="userName" value={formData.userName} onChange={onChange}/>
                         </td>
                     </tr>
                     <tr>
-                        <td className="join_left">전화번호</td>
+                        <td className="join_left">PHONE</td>
                         <td className="join_right">
                         <input placeholder="숫자만 입력 가능" id='pn' className='margin' type="text" name="phone" value={formData.phone} onChange={phoneNumber}/>
                         </td>
                     </tr>
                     <tr>
-                        <td className="join_left">이메일</td>
+                        <td className="join_left">E-MAIL</td>
                         <td className="join_right">
                             <input placeholder="숫자, 영문@aaa.com 형식" className='margin' type="text" name="email" id="email" value={formData.email} onChange={onChange}/>
-                            <span id ="emailck" onClick={emailck}>형식확인</span>
+                            <span id ="emailck" onClick={emailck}>CHECK</span>
                         </td>
                     </tr>
                     <tr>
-                        <td className="join_left">주소</td>
+                        <td className="join_left">ADDRESS</td>
                         <td className="join_right">
                             <input className='margin' name="address" type="text" value={formData.address} onChange={onChange}/>
                             <input className='margin_n' name="adddetail" type="text" value={formData.adddetail} onChange={onChange}/>
-                            <button id="add_btn" type="button" onClick={openPostCode} >우편번호 검색</button>
+                            <button id="add_btn" type="button" onClick={openPostCode} >SEARCH</button>
                             <div id="popupDom">
                             {isPopupOpen && (
                                 <PopupDom>
@@ -291,9 +291,18 @@ const MemberJoin = () => {
                         </td>
                     </tr>
                     <tr>
-                        <td colSpan={2} id="btns">
-                           <button className='btn' type="submit">등록</button>
-                           <button className='btn' type="reset">취소</button>
+                        <td colSpan={2} className="btns">
+                        <button className='btn' type="submit">join</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colSpan={2} className='or_td'>
+                            or
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colSpan={2} id='go_center' className="btns">
+                        <button className='btn' type="reset" onClick={()=>{navigate('/')}}>deny</button>
                         </td>
                     </tr>
                 </tbody>

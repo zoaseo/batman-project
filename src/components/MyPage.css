@@ -15,7 +15,8 @@
     position: absolute;
 }
 #Mypage form {
-    background-color: rgba(0, 0, 0, 0.5);
+    /* background-color: rgba(0, 0, 0, 0.5); */
+    background-color: rgba(1, 1, 1, 0.1);
     position: absolute;
     padding: 20px 30px;
     width: 800px;
@@ -49,7 +50,8 @@
     cursor: pointer;
 }
 #total {
-    background-color: rgba(0, 0, 0, 0.5);
+    /* background-color: rgba(0, 0, 0, 0.5); */
+    background-color: rgba(1, 1, 1, 0.1);
     width: 800px;
     height: 70px;
     position: absolute;

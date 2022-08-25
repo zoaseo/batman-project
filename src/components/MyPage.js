@@ -32,6 +32,7 @@ const MyPage = () => {
             c_user_pay: data? data.total : "",
         })
     },[data])
+    console.log(pay.c_user_pay);
     if(loading)  return <div className="spinner_bg"><div class="sk-folding-cube">
     <div class="sk-cube1 sk-cube"></div>
     <div class="sk-cube2 sk-cube"></div>
@@ -49,14 +50,14 @@ const MyPage = () => {
                     <tbody>
                         <tr>
                             <th colSpan={7}>
-                                {uname}님의 장바구니입니다.
+                                {uname}'s PACK
                             </th>
                         </tr>
                         <tr id="table_tr">
-                            <td>제품</td>
-                            <td>제품명</td>
-                            <td>수량</td>
-                            <td>가격</td>
+                            <td>product</td>
+                            <td>name</td>
+                            <td>count</td>
+                            <td>price</td>
                         </tr>
                         {datas.length === 0 ? <tr><td id="noreserve" colSpan={6}>담긴 제품이 없습니다.</td></tr>
                         : datas.map((data, index)=>(<MypageComponent key={index} data={data}/> ))}
@@ -64,7 +65,7 @@ const MyPage = () => {
                 </table>
             </form>
             <div id="total">
-                <p>총주문금액: {pay.c_user_pay}원</p>
+                <p>Total: ￦{pay.c_user_pay}</p>
             </div>
         </div>
     );

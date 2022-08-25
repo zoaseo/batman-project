@@ -41,40 +41,20 @@ const MypageComponent = ({data}) => {
     },[cp])
     async function increase(e) {
         e.preventDefault();
-        // navigate('/');
-        // window.onload();
         setCount({
             ...count,
             c_user_count: count.c_user_count + 1,
             c_user_pay: count.c_user_pay + data.user_price
         })
-        // await axios.put(`${API_URL}/editpack/${data.id}`,count)
-        // .then((result)=>{
-        //     console.log(count.c_user_count);
-        //     console.log(result);
-        // })
-        // .catch(e=>{
-        //     console.log(e);
-        // })
     }
     async function decrease(e) {
         e.preventDefault();
-        // navigate('/');
-        // window.onload();
         setCount({
             ...count,
             c_user_count: count.c_user_count > 1 ? count.c_user_count - 1 : 1,
             c_user_pay: count.c_user_count > 1 ? count.c_user_pay - data.user_price : count.c_user_pay 
         })
-        // await axios.put(`${API_URL}/editpack/${data.id}`,count)
-        // .then((result)=>{
-        //     console.log(result);
-        // })
-        // .catch(e=>{
-        //     console.log(e);
-        // })
     }
-    // console.log(count)
     async function onEdit() {
         await axios.put(`${API_URL}/editpack/${data.id}`,count)
         .then((result)=>{
@@ -90,15 +70,15 @@ const MypageComponent = ({data}) => {
     // console.log(data)
     return (
         <tr>
-            <td id="imgtd"><img src={`../img/${data.user_imgsrc}`} alt="imgpro"/></td>
+            <td id="imgtd"><img src={`${API_URL}/upload/${data.user_imgsrc}`} alt="imgpro"/></td>
             <td>{data.user_name}</td>
             <td>
                 <span className='btnbtn'><button onClick={decrease}>-</button></span>
                 {count.c_user_count}
                 <span className='btnbtn'><button onClick={increase}>+</button></span>    
             </td>
-            <td>{count.c_user_pay}원</td>
-            <td id="delBtn"><button onClick={onEdit}>수정</button><button onClick={onDelete}>삭제</button></td>
+            <td>￦{count.c_user_pay}</td>
+            <td id="delBtn"><button onClick={onEdit}>change</button><button onClick={onDelete}>delete</button></td>
         </tr>
     );
 };

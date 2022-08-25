@@ -171,7 +171,7 @@ const Header = () => {
                   
                     <ul id="header_ul">
                         <li>
-                            <ul id='one' className="li_flex">
+                            <ul id='one' className="li_flex" onClick={OpenUl}>
                                 <li>
                                     <h2>Batman Begins</h2>
                                     <ul id="fir_ul">
@@ -179,13 +179,13 @@ const Header = () => {
                                         <li onClick={CloseSitemap} ><Link to="/goods1">goods</Link></li>
                                     </ul>
                                 </li>
-                                <li className='dp'><div id="d1" className='down' onClick={OpenUl}>
+                                <li className='dp'><div id="d1" className='down'>
                                     <img src="../img/down.png" alt="down"/>
                                     </div></li>  
                             </ul>
                         </li>
                         <li>
-                            <ul id='two' className="li_flex">
+                            <ul id='two' className="li_flex" onClick={OpenUl2}>
                                 <li>
                                     <h2>The Dark Knight</h2>
                                     <ul id="fir_ul">
@@ -193,13 +193,13 @@ const Header = () => {
                                         <li onClick={CloseSitemap} ><Link to="/goods2">goods</Link></li>
                                     </ul>
                                 </li>
-                                <li className='dp'><div id='d2' className='down' onClick={OpenUl2}>
+                                <li className='dp'><div id='d2' className='down'>
                                     <img src="../img/down.png" alt="down"/>
                                     </div></li>   
                             </ul>
                         </li>
                         <li>
-                            <ul id='three' className="li_flex la_li">
+                            <ul id='three' className="li_flex la_li" onClick={OpenUl3}>
                                 <li>
                                     <h2>The Dark Knight Rises</h2>
                                     <ul id="fir_ul">
@@ -207,7 +207,7 @@ const Header = () => {
                                         <li onClick={CloseSitemap} ><Link to="/goods3">goods</Link></li>
                                     </ul>
                                 </li>
-                                <li className='dp'><div id='d3' className='down' onClick={OpenUl3}>
+                                <li className='dp'><div id='d3' className='down'>
                                     <img src="../img/down.png" alt="down"/>
                                     </div></li>   
                             </ul>

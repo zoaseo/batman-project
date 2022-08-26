@@ -30,6 +30,7 @@
     width: 30px;
     height: 20px;
     transition: 0.5s;
+    cursor: pointer;
 }
 #header #ham span {
     display: block;
@@ -48,6 +49,7 @@
     /* background-color: tomato; */
     left: 490px;
     top: 45px;
+    cursor: pointer;
 }
 #header #hambuger_menu span {
     display: block;
@@ -75,7 +77,7 @@
     transform: rotate(-360deg);
 } */
 #site_map {
-    background-color: rgba(1, 1, 1, 0.5);
+    background-color: rgba(1, 1, 1, 0.9);
     width: 550px;
     height: 100vh;
     position: absolute;
@@ -181,6 +183,15 @@ form input {
 }
 .fir_li {
     margin-top: 50px;
+}
+#one {
+    cursor: pointer;
+}
+#two {
+    cursor: pointer;
+}
+#three {
+    cursor: pointer;
 }
 #one.ontoggle {
     height: 200px;

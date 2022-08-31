@@ -371,7 +371,7 @@ form input {
         /* letter-spacing: 15px; */
         /* width: 180px; */
         position: absolute;
-        left: 13%;
+        /* left: 13%; */
         transform: translate(-50%);
         top: 18%;
     }
@@ -382,9 +382,15 @@ form input {
         /* height: 1px;
         transition: 0.5s; */
     }
+    #fff {
+        /* position: absolute;
+        top: 5%;
+        left: 0; */
+        /* margin-right: 100px; */
+    }
     #fff li {
         margin-left: 15px;
-        font-size: 15px;
+        font-size: 11px;
     }
     #site_map {
         /* background-color: rgba(1, 1, 1, 0.5); */

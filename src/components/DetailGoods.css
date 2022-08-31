@@ -90,8 +90,8 @@
     /* background-color: tomato; */
     width: 150px;
     position: absolute;
-    left: 27%;
-    top: 18%;
+    left: -85%;
+    top: -10%;
 }
 #detail_goods #btns button {
     background-color: rgba(255, 255, 255, 0.5);
@@ -132,6 +132,7 @@
         left: 50%;
         transform: translate(-50%,-50%);
         /* z-index: -1000; */
+        z-index: -2;
     }
     #detail_goods #left_detail {
         /* background-color: aqua; */
@@ -218,9 +219,9 @@
         /* background-color: tomato; */
         width: 110px;
         position: absolute;
-        left: 10%;
-        top: 12%;
-        z-index: 5;
+        left: 60%;
+        top: 8%;
+        /* z-index: 2; */
     }
     #detail_goods #btns button {
         background-color: rgba(255, 255, 255, 0.5);

@@ -25,11 +25,12 @@ const Goods1Page = () => {
     //   },[introText])
     // const [state] = useAsync(getGoods, [])
     // const { loading, data: goods, error } = state;
-    if(loading)  return <div className="spinner_bg"><div className="sk-folding-cube">
+    if(loading)  return <div className="spinner_bg"><div className='spinner'><div className="sk-folding-cube">
     <div className="sk-cube1 sk-cube"></div>
     <div className="sk-cube2 sk-cube"></div>
     <div className="sk-cube4 sk-cube"></div>
     <div className="sk-cube3 sk-cube"></div>
+    </div>
   </div></div>
     if(error) return <div>에러가 발생했습니다.</div>
     if(!goods) return <div>로딩중입니다.</div>

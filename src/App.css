@@ -346,12 +346,16 @@ font-family: 'Noto Sans KR', sans-serif;  한글 */
 .spinner_bg {
     height: 100vh;
     background-color: black;
+    position: relative;
 }
 .spinner {
     margin: 200px auto;
     width: 40px;
     height: 40px;
-    position: relative;
+    left: 50%;
+    top: 20%;
+    transform: translate(-50%, -50%);
+    position: absolute;
 }
 
 /* .cube1, .cube2 {

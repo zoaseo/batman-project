@@ -106,10 +106,10 @@ const DetailGoods = () => {
             <div id="back">
             </div>
             <div id="bg"></div>
-            <div id='btns'>
+            {/* <div id='btns'>
             {uid === 'admin123' ?  <button><Link to={`/editgoods/${id}`}>modify</Link></button> : ''} 
             {uid === 'admin123' ?  <button onClick={onDelete}>delete</button> : ''} 
-            </div>
+            </div> */}
             <div id="left_detail">
                 <div id="detailgoods_img"><img src={`${API_URL}/upload/${goods.proimgsrc}`} alt="goodsimg" /></div>
             </div>
@@ -117,6 +117,10 @@ const DetailGoods = () => {
                 <p id="d_title1">{goods.proname}</p>
                 <p id="d_title2">{goods.prodescript}</p>
                 <p id="d_title3">price: ￦{goods.price}</p>
+                <div id='btns'>
+            {uid === 'admin123' ?  <button><Link to={`/editgoods/${id}`}>modify</Link></button> : ''} 
+            {uid === 'admin123' ?  <button onClick={onDelete}>delete</button> : ''} 
+            </div>
                 <div id="gopurchace">
                     <CounterContainer />
                     <button id="purchace" onClick={addReserve}>put</button>
